@@ -1,23 +1,13 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <stdarg.h>
 
-void	ft_print(int argc, char *argv[])
+int	ft_print(const char *fmt, ...)
 {
-	argc--;
-	while (argc != 0)
-	{
-		printf("\nfrom the first while\n");
-		while (argv[argc])
-		{
-			write(1, argv[argc], 1);
-			if (*argv[argc] != '\0')
-				argv[argc]++;
-			else
-				break;
-		}
-		argc--;
-	}
-	return ;
+	va_list	args;
+	va_start(args, fmt);
+
+	return (0);
 }
 
 int	main()
