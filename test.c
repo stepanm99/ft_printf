@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include "libft/libft.h"
 
 int	ft_print(const char *fmt, ...)
 {
@@ -23,6 +24,16 @@ int	ft_print(const char *fmt, ...)
 					test++;
 				}
 			}
+			if (*fmt == 'd')
+			{
+				int	nbr = va_arg(args, int);
+				char	*nbra = ft_itoa(nbr);
+				while (*nbra != '\0')
+				{
+					write(1, nbra, 1);
+					nbra++;
+				}
+			}
 		}
 		fmt++;
 	}
@@ -33,6 +44,6 @@ int	ft_print(const char *fmt, ...)
 int	main(void)
 {
 	char	test[] = "\n\ttext from the variable\n";
-	ft_print("test of the string %qjkjsld\nnext line\n\0", test);
+	ft_print("test of the string %qjkjsld\nnext %d line\n\0", test, 125);
 	return (0);
 }
