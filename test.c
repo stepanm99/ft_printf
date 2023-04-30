@@ -32,7 +32,7 @@ int	ft_print(const char *fmt, ...)
 
 int	main(void)
 {
-	char	test[] = "\nvariable from the argument\n\n\n";
-	ft_print("test of the string %q", test);
+	char	test[] = "\n\ttext from the variable\n";
+	ft_print("test of the string %qjkjsld\nnext line\n\0", test);
 	return (0);
 }
