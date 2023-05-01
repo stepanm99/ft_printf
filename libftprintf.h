@@ -4,5 +4,6 @@
 # include<unistd.h>
 
 int	ft_print(const char *fmt, ...);
+int	main(void);
 
 #endif

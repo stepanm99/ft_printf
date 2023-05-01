@@ -6,13 +6,13 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/01 19:20:48 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/01 20:07:06 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libftprintf.a
 
-SRC = main.c test.c
+SRC = ft_printf.c
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror
@@ -21,14 +21,9 @@ OBJ	= $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(OBJB)
+$(NAME): $(OBJ)
 	@echo "Linking $@"
-	@ar rcs $(NAME) $(OBJ) $(OBJB)
-	@echo "Done!"
-
-bonus: $(OBJB)
-	@echo "Linking $@"
-	@ar rcs libft.a $(OBJB)
+	@ar rcs $(NAME) $(OBJ)
 	@echo "Done!"
 
 %.o: %.c
