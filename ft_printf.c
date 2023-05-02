@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/02 21:20:35 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/02 22:37:05 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "libftprintf.h"
+#include "Libft/libft.h"
 
 static int	type_resolve(const char *fmt)
 {

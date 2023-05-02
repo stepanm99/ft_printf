@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flaginit.c                                      :+:      :+:    :+:   */
+/*   ft_print_flag.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 21:07:54 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/02 22:06:15 by smelicha         ###   ########.fr       */
+/*   Created: 2023/05/02 22:15:10 by smelicha          #+#    #+#             */
+/*   Updated: 2023/05/02 22:35:56 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-struct s_flags	ft_flaginit(void)
+int	ft_print_flag()
 {
-	struct s_flags	test;
-
-	test.dash = 0;
-	test.zero = 0;
-	test.space = 0;
-	test.hash = 0;
-	test.plus = 0;
-	return (test);
+	printf("\nft_print_flag prototype\n");
+	return (0);
 }
