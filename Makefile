@@ -6,13 +6,13 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/01 21:16:36 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/02 21:55:35 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libftprintf.a
 
-SRC = ft_printf.c
+SRC = ft_printf.c ft_flaginit.c
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror
@@ -48,4 +48,4 @@ maintest: all
 	@$(CC) $(NAME) Libft/libft.a main.c $(FLAGS)
 	@./a.out
 
-.PHONY: all clean fclean re test bonus
+.PHONY: all clean fclean re test

@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/02 18:15:36 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/02 21:20:35 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 static int	type_resolve(const char *fmt)
 {
 	fmt++;
-	if (*fmt == '')
+	if (*fmt == 'd')
+		printf("some test\n");
 	return (0);
 }
 

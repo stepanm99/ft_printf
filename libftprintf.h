@@ -7,7 +7,7 @@
 int	ft_printf(const char *fmt, ...);
 int	main(void);
 
-typedef struct s_flags
+struct s_flags
 {
 	int	left;
 	int	zero;
@@ -15,5 +15,7 @@ typedef struct s_flags
 	int	hash;
 	int plus;
 };
+
+struct s_flags	ft_flaginit(void);
 
 #endif
