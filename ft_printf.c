@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/01 21:18:11 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:15:36 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,40 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "libftprintf.h"
+
+static int	type_resolve(const char *fmt)
+{
+	fmt++;
+	if (*fmt == '')
+	return (0);
+}
+
+int	ft_printf(const char *fmt, ...)
+{
+	va_list	args;
+	int	count;
+	int	*cntptr;
+
+	cntptr = &count;
+	count = 0;
+	va_start (args, fmt);
+	while (*fmt != '\0')
+	{
+		if (*fmt != '%')
+		{
+			write (1, fmt, 1);
+			count++;
+		}
+		if (*fmt == '%')
+			type_resolve(fmt);
+		fmt++;
+	}
+	va_end (args);
+	return (count);
+}
+
+/*
+FIRST PROTOTYPE
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -50,6 +84,6 @@ int	ft_printf(const char *fmt, ...)
 		fmt++;
 	}
 	va_end (args);
-	printf("update surprise\n\n\n");
 	return (0);
 }
+*/
