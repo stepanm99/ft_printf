@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/02 22:37:05 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/02 23:20:28 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,14 @@
 #include "libftprintf.h"
 #include "Libft/libft.h"
 
-static int	type_resolve(const char *fmt)
-{
-	fmt++;
-	if (*fmt == 'd')
-		printf("some test\n");
-	return (0);
-}
-
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	args;
 	int	count;
-	int	*cntptr;
+	int	*counter;
 
-	cntptr = &count;
 	count = 0;
+	counter = &count;
 	va_start (args, fmt);
 	while (*fmt != '\0')
 	{
@@ -41,7 +33,7 @@ int	ft_printf(const char *fmt, ...)
 			count++;
 		}
 		if (*fmt == '%')
-			type_resolve(fmt);
+			type_resolve(fmt, conter);
 		fmt++;
 	}
 	va_end (args);

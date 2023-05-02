@@ -6,6 +6,7 @@
 # include<stdio.h>
 
 int	ft_printf(const char *fmt, ...);
+int	ft_type_resolve(const char *fmt);
 int	ft_check_flag();
 int	ft_print_character();
 int	ft_print_decimal();
