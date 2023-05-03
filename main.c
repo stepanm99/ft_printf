@@ -13,7 +13,7 @@ int	main(void)
 	printf("value of space %d\n", data.space);
 	printf("value of hash %d\n", data.hash);
 	printf("value of plus %d\n", data.plus);*/
-	count = ft_printf("There should be a percent sign ---> %% <---\n");
+	count = ft_printf("There should be a percent sign ---> %% <---\nand here should be a character: %c\n", 'Q');
 	printf("\ntotal number of characters printed: %d", count);
 	return (0);
 }

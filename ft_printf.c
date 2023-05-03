@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/03 20:08:28 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/03 21:04:32 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ int	ft_printf(const char *fmt, ...)
 {
 	va_list	args;
 	t_data	data;
+	t_data	*dataptr;
 
 	va_start (args, fmt);
 	data = ft_datainit(&args, fmt);
+	dataptr = &data;
 	while (*data.fmt != '\0')
 	{
 		if (*data.fmt != '%')
@@ -28,7 +30,7 @@ int	ft_printf(const char *fmt, ...)
 		}
 		if (*data.fmt == '%')
 		{
-			ft_type_resolve(data);
+			ft_type_resolve(dataptr);
 		}
 		data.fmt++;
 	}

@@ -6,13 +6,13 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:10 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/02 22:35:56 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/03 20:55:55 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_print_flag()
+int	ft_print_flag(t_data *data)
 {
 	printf("\nft_print_flag prototype\n");
 	return (0);
