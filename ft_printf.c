@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/02 23:20:28 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:02:48 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	args;
-	int	count;
-	int	*counter;
+	int		count;
+	int		*counter;
 
 	count = 0;
 	counter = &count;
@@ -33,7 +33,9 @@ int	ft_printf(const char *fmt, ...)
 			count++;
 		}
 		if (*fmt == '%')
-			type_resolve(fmt, conter);
+		{
+			ft_type_resolve(fmt, counter, args);
+		}
 		fmt++;
 	}
 	va_end (args);

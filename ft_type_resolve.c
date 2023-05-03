@@ -6,13 +6,13 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:40:38 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/02 23:18:50 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:09:22 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_type_resolve(const char *fmt, int *counter)
+int	ft_type_resolve(const char *fmt, int *counter, va_list args)
 {
 	fmt++;
 	if (*fmt == 'c')
@@ -32,6 +32,6 @@ int	ft_type_resolve(const char *fmt, int *counter)
 	if (*fmt == 'X')
 		ft_print_hex_up();
 	if (*fmt == '%')
-		ft_print_percent(int *counter);
+		ft_print_percent(counter);
 	return (0);
 }
