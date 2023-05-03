@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_flag.c                                    :+:      :+:    :+:   */
+/*   ft_char_comp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/03 22:47:51 by smelicha         ###   ########.fr       */
+/*   Created: 2023/05/03 22:40:04 by smelicha          #+#    #+#             */
+/*   Updated: 2023/05/03 22:48:21 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_check_flag(t_data *data)
+int	ft_char_comp(char c, char *set)
 {
+	while (*set != '\0')
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
 	return (0);
 }

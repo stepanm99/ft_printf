@@ -33,5 +33,6 @@ int	ft_print_percent(t_data *data);
 int	ft_print_pointer(t_data *data);
 int	ft_print_string(t_data *data);
 int	ft_print_unsigned_int(t_data *data);
+int	ft_char_comp(char c, char *set);
 
 #endif

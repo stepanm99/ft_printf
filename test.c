@@ -2,7 +2,7 @@
 
 int	main (void)
 {
-	int	number;
+/*	int	number;
 	int	*ptr;
 
 	number = printf("");
@@ -15,5 +15,5 @@ int	main (void)
 	printf(" |%-10x| \n", number);
 	printf(" |%o| \n", number);
 	printf(" |%#o| \n", number);
-	printf("%p", ptr);
+	printf("%p", ptr);*/
 }
