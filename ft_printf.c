@@ -6,40 +6,34 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/03 18:02:48 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/03 20:08:28 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <stdarg.h>
 #include "libftprintf.h"
-#include "Libft/libft.h"
 
 int	ft_printf(const char *fmt, ...)
 {
 	va_list	args;
-	int		count;
-	int		*counter;
+	t_data	data;
 
-	count = 0;
-	counter = &count;
 	va_start (args, fmt);
-	while (*fmt != '\0')
+	data = ft_datainit(&args, fmt);
+	while (*data.fmt != '\0')
 	{
-		if (*fmt != '%')
+		if (*data.fmt != '%')
 		{
-			write (1, fmt, 1);
-			count++;
+			write (1, data.fmt, 1);
+			data.counter++;
 		}
-		if (*fmt == '%')
+		if (*data.fmt == '%')
 		{
-			ft_type_resolve(fmt, counter, args);
+			ft_type_resolve(data);
 		}
-		fmt++;
+		data.fmt++;
 	}
 	va_end (args);
-	return (count);
+	return (data.counter);
 }
 
 /*

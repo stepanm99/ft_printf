@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flaginit.c                                      :+:      :+:    :+:   */
+/*   ft_datainit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 21:07:54 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/02 22:06:15 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:58:12 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-struct s_flags	ft_flaginit(void)
+t_data	ft_datainit(va_list *args, const char *fmt)
 {
-	struct s_flags	test;
+	struct s_data	data;
 
-	test.dash = 0;
-	test.zero = 0;
-	test.space = 0;
-	test.hash = 0;
-	test.plus = 0;
-	return (test);
+	data.dash = 0;
+	data.zero = 0;
+	data.space = 0;
+	data.hash = 0;
+	data.plus = 0;
+	data.counter = 0;
+	data.args = args;
+	data.fmt = fmt;
+	return (data);
 }
