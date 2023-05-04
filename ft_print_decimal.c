@@ -14,7 +14,14 @@
 
 int	ft_print_decimal(t_data *data)
 {
-	data->plus = 0;
-	printf("\nft_print_decimal prototype\n");
+	char	*string;
+
+	string = ft_itoa(va_arg(*data->args, int));
+	while (*string != '\0')
+		{
+			write(1, string, 1);
+			data->counter++;
+			string++;
+		}
 	return (0);
 }

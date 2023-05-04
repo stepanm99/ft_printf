@@ -5,7 +5,7 @@ int	main(void)
 {
 //	char	data[] = "\n\ttext from the variable\n";
 //	printf("return value: %d\n\n", ft_printf("data of the string %qjkjsld\nnext %d line\n\0"));
-//	int		count;
+	int		count;
 /*
 	data = ft_datainit();
 	printf("value of left %d\n", data.dash);
@@ -19,16 +19,7 @@ int	main(void)
 	printf("\ntotal number of characters printed: %d", count);
 	return (0);*/
 
-	char	test[] = "abcd";
-	char	test1[] = "bcde";
-	char	c1 = 'a';
-	char	c2 = 'c';
-	int		res = 0;
-
-	res = ft_char_comp(c1, test);
-	printf("%d\n", res);
-	res = ft_char_comp(c1, test1);
-	printf("%d\n", res);
-	res = ft_char_comp(c2, test);
-	printf("%d\n", res);
+	count = ft_printf("This is number: %d\n", 120);
+	printf("number of printed characters: %d\n", count);
+	return (0);
 }
