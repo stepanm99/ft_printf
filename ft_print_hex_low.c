@@ -14,7 +14,6 @@
 
 int	ft_print_hex_low(t_data *data)
 {
-	data->plus = 0;
 	printf("\nft_print_hex_low prototype\n");
 	return (0);
 }

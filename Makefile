@@ -48,8 +48,7 @@ test: all
 
 maintest: all
 	@echo "~~~ Testing with main function ~~~"
-	@$(CC) $(SRC) Libft/libft.a main.c $(FLAGS)
-#for home testing purpose there is $(SRC) instead of $(NAME) -> need to change it before finishing
+	@$(CC) $(NAME) Libft/libft.a main.c $(FLAGS)
 	@./a.out
 
 .PHONY: all clean fclean re test

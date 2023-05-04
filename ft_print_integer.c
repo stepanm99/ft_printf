@@ -14,7 +14,6 @@
 
 int	ft_print_integer(t_data *data)
 {
-	data->plus = 0;
 	printf("\nft_print_integer prototype\n");
 	return (0);
 }

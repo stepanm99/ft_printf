@@ -14,7 +14,6 @@
 
 int	ft_print_flag(t_data *data)
 {
-	data->plus = 0;
 	printf("\nft_print_flag prototype\n");
 	return (0);
 }

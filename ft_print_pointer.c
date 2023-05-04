@@ -14,7 +14,6 @@
 
 int	ft_print_pointer(t_data *data)
 {
-	data->plus = 0;
 	printf("\nft_print_pointer prototype\n");
 	return (0);
 }

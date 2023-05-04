@@ -14,7 +14,6 @@
 
 int	ft_print_unsigned_int(t_data *data)
 {
-	data->plus = 0;
 	printf("\nft_print_unsigned_int prototype\n");
 	return (0);
 }
