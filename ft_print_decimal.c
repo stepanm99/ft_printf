@@ -12,6 +12,8 @@
 
 #include "libftprintf.h"
 
+//decimal could be with floating point!!!
+
 int	ft_print_decimal(t_data *data)
 {
 	char	*string;
