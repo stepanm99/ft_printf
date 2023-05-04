@@ -14,5 +14,6 @@
 
 int	ft_check_flag(t_data *data)
 {
+	data->plus = 0;
 	return (0);
 }

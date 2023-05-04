@@ -14,6 +14,7 @@
 
 int	ft_print_hex_up(t_data *data)
 {
+	data->plus = 0;
 	printf("\nft_print_hex_up prototype\n");
 	return (0);
 }

@@ -48,7 +48,8 @@ test: all
 
 maintest: all
 	@echo "~~~ Testing with main function ~~~"
-	@$(CC) $(NAME) Libft/libft.a main.c $(FLAGS)
+	@$(CC) $(SRC) Libft/libft.a main.c $(FLAGS)
+#for testing purposes at home on linux $(NAME) was changed to $(SRC)
 	@./a.out
 
 .PHONY: all clean fclean re test
