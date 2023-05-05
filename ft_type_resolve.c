@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:40:38 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/03 20:58:14 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/05 18:43:55 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ int	ft_type_resolve(t_data *data)
 		ft_print_hex_up(data);
 	if (*data->fmt == '%')
 		ft_print_percent(data);
+	if (ft_char_comp(*data->fmt, "-0# +") || ft_isdigit(*data->fmt))
+		ft_check_flag(data);
 	return (0);
 }

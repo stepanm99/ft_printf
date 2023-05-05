@@ -19,6 +19,18 @@ int	main(void)
 	printf("\ntotal number of characters printed: %d", count);
 	return (0);*/
 
+	//general test
+	ft_printf("charcter: |%c|\n", 'c');
+	ft_printf("string: |%s|\n", "string");
+	ft_printf("pointer: |%p|\n", &count);
+	ft_printf("integer: |%i|\n", -42);
+	ft_printf("decimal: |%d|\n", -42.42);
+	ft_printf("unsigned: |%u|\n", 42.42);
+	ft_printf("hex low: |%x|\n", 0x42F5);
+	ft_printf("hex up: |%X|\n", 0x42F5);
+	ft_printf("percent: |%%|\n");
+	ft_printf("with flag: |%-#d", 10);
+
 	count = ft_printf("This is number: %d\n", 120);
 	printf("number of printed characters: %d\n", count);
 	return (0);
