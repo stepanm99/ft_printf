@@ -6,11 +6,11 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/03 22:47:26 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/05 19:46:11 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libftprintf.a
+NAME	= ft_printf.a
 
 SRC = ft_printf.c ft_datainit.c ft_check_flag.c ft_print_character.c \
 	ft_print_decimal.c ft_print_flag.c ft_print_hex_low.c ft_print_hex_up.c \

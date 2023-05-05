@@ -6,11 +6,11 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:30 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/03 21:56:54 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/05 19:45:50 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_print_string(t_data *data)
 {

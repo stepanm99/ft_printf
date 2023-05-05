@@ -6,11 +6,11 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/05 19:39:11 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/05 19:46:37 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -35,7 +35,7 @@ int	ft_printf(const char *fmt, ...)
 		data.fmt++;
 	}
 	va_end (args);
-
+/*
 	//for testing purpose
 	printf("value of left %d\n", data.dash);
 	printf("value of zero %d\n", data.zero);
@@ -43,6 +43,7 @@ int	ft_printf(const char *fmt, ...)
 	printf("value of hash %d\n", data.hash);
 	printf("value of plus %d\n", data.plus);
 	//for testing purpose
+//*/
 	return (data.counter);
 }
 

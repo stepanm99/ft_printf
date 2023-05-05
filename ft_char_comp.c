@@ -6,11 +6,11 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 22:40:04 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/03 22:48:21 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/05 19:45:11 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_char_comp(char c, char *set)
 {
