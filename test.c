@@ -17,5 +17,6 @@ int	main (void)
 	printf(" |%#o| \n", number);
 	printf("%p", ptr);*/
 	printf("Hexadecimal of %d is %#x\n", 10, 0x10);
+	printf("Test |%2147483640%|\n");
 	return (0);
 }

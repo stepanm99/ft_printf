@@ -16,6 +16,7 @@ typedef struct s_data
 	int			counter;
 	va_list		*args;
 	const char	*fmt;
+	char		spcnbr[10];
 } t_data;
 
 t_data	ft_datainit(va_list *args, const char *fmt);
