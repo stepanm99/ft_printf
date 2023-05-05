@@ -6,11 +6,25 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/05 19:46:37 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/05 21:44:42 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void	checkrun(t_data *data)
+{
+	while (*data->fmtcount != '\0')
+	{
+		if (*data->fmtcount != '%')
+			data->counter++;
+		if (*data->fmtcount == '%')
+			ft_type_resolve(data);
+		data->fmtcount++;
+	}
+	data->write = 1;
+	data->counter = 0;
+}
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -21,7 +35,8 @@ int	ft_printf(const char *fmt, ...)
 	va_start (args, fmt);
 	data = ft_datainit(&args, fmt);
 	dataptr = &data;
-	while (*data.fmt != '\0')
+	checkrun(dataptr);
+	while ((*data.fmt != '\0') && (data.write == 1))
 	{
 		if (*data.fmt != '%')
 		{
@@ -29,9 +44,7 @@ int	ft_printf(const char *fmt, ...)
 			data.counter++;
 		}
 		if (*data.fmt == '%')
-		{
 			ft_type_resolve(dataptr);
-		}
 		data.fmt++;
 	}
 	va_end (args);
