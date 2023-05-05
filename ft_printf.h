@@ -13,9 +13,12 @@ typedef struct s_data
 	int			space;
 	int			hash;
 	int 		plus;
+	int			write;
 	int			counter;
 	va_list		*args;
+	va_list		*argscount;
 	const char	*fmt;
+	const char	*fmtcount;
 	char		spcnbr[10];
 } t_data;
 

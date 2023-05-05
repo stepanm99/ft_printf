@@ -16,7 +16,10 @@ int	main (void)
 	printf(" |%o| \n", number);
 	printf(" |%#o| \n", number);
 	printf("%p", ptr);*/
+	int	count;
+
 	printf("Hexadecimal of %d is %#x\n", 10, 0x10);
-	printf("Test |%2147483640%|\n");
+	count = printf("Test |%2147483647%|\n");
+	printf("number of printed characters: %d\n", count);
 	return (0);
 }

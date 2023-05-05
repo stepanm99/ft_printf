@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 21:07:54 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/05 19:45:19 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/05 21:03:05 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@ t_data	ft_datainit(va_list *args, const char *fmt)
 	data.space = 0;
 	data.hash = 0;
 	data.plus = 0;
+	data.write = 0;
 	data.counter = 0;
 	data.args = args;
+	data.argscount = args;
 	data.fmt = fmt;
+	data.fmtcount = fmt;
 	return (data);
 }
