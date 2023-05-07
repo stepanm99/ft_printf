@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static void	checkrun(t_data *data)
+/*static void	checkrun(t_data *data)
 {
 	while (*data->fmtcount != '\0')
 	{
@@ -24,7 +24,7 @@ static void	checkrun(t_data *data)
 	}
 	data->write = 1;
 	data->counter = 0;
-}
+}*/
 
 int	ft_printf(const char *fmt, ...)
 {
@@ -35,7 +35,7 @@ int	ft_printf(const char *fmt, ...)
 	va_start (args, fmt);
 	data = ft_datainit(&args, fmt);
 	dataptr = &data;
-	checkrun(dataptr);
+//	checkrun(dataptr);
 	while ((*data.fmt != '\0') && (data.write == 1))
 	{
 		if (*data.fmt != '%')

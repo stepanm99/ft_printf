@@ -14,7 +14,14 @@
 
 int	ft_print_unsigned_int(t_data *data)
 {
-	data->plus = 0;
-	printf("\nft_print_unsigned_int prototype\n");
+	char	*string;
+
+	string = ft_utoa(va_arg(*data->args, size_t));
+	while (*string != '\0')
+		{
+			write(1, string, 1);
+			data->counter++;
+			string++;
+		}
 	return (0);
 }

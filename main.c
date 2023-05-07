@@ -19,13 +19,16 @@ int	main(void)
 //	return (0);*/
 
 	//general test
+	size_t	n;
+
+	n = 3047483647;
 	ft_printf("12345\n");
 	ft_printf("character: |%c|\n", 'c');
-	ft_printf("string: |%s|\n", "string");
+	ft_printf("string: |%s|\n", "test");
 	ft_printf("pointer: |%p|\n", &count);
 	ft_printf("integer: |%i|\n", -42);
-	ft_printf("decimal: |%d|\n", -42.42);
-	ft_printf("unsigned: |%u|\n", 42.42);
+	ft_printf("decimal: |%d|\n", 42);
+	ft_printf("unsigned: |%u|\n", n);
 	ft_printf("hex low: |%x|\n", 0x42F5);
 	ft_printf("hex up: |%X|\n", 0x42F5);
 	ft_printf("percent: |%%|\n");

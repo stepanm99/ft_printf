@@ -21,11 +21,11 @@ t_data	ft_datainit(va_list *args, const char *fmt)
 	data.space = 0;
 	data.hash = 0;
 	data.plus = 0;
-	data.write = 0;
+	data.write = 1;
 	data.counter = 0;
 	data.args = args;
-	data.argscount = args;
+//	data.argscount = args;
 	data.fmt = fmt;
-	data.fmtcount = fmt;
+//	data.fmtcount = fmt;
 	return (data);
 }
