@@ -14,7 +14,10 @@
 
 int	ft_type_resolve(t_data *data)
 {
-	data->fmt++;
+	if (data->write == 0)
+		data->fmtcount++;
+	else
+		data->fmt++;
 	if (*data->fmt == 'c')
 		ft_print_character(data);
 	if (*data->fmt == 's')

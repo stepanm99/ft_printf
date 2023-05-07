@@ -19,7 +19,8 @@ int	main(void)
 //	return (0);*/
 
 	//general test
-	ft_printf("charcter: |%c|\n", 'c');
+	ft_printf("12345\n");
+	ft_printf("character: |%c|\n", 'c');
 	ft_printf("string: |%s|\n", "string");
 	ft_printf("pointer: |%p|\n", &count);
 	ft_printf("integer: |%i|\n", -42);
