@@ -35,8 +35,8 @@ int	main(void)
 	ft_printf("percent: |%%|\n");
 	ft_printf("with flag: |%-#+0 d", 10);
 
-	printf("this is pointer: |%#lx|\n", (uintptr_t)&n);
-	ft_printf("this should be same thing |%#x|\n", (uintptr_t)&n);
+	printf("this is pointer: |%p|\n", &n);
+	ft_printf("this should be same thing |%p|\n", &n);
 
 	count = ft_printf("This is number: %d\n", 120);
 	printf("number of printed characters: %d\n", count);
