@@ -14,7 +14,19 @@
 
 int	ft_print_hex_low(t_data *data)
 {
-	data->plus = 0;
-	printf("\nft_print_hex_low prototype\n");
+	char	*string;
+
+	string = ft_hextoa(va_arg(*data->args, size_t), data);
+	if (data->hash == 1)
+	{
+		write(1, "0x", 2);
+		data->counter += 2;
+	}
+	while (*string != '\0')
+		{
+			write(1, string, 1);
+			data->counter++;
+			string++;
+		}
 	return (0);
 }

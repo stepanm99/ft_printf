@@ -14,6 +14,7 @@ typedef struct s_data
 	int			hash;
 	int 		plus;
 	int			write;
+	int			hexup;
 	int			counter;
 	va_list		*args;
 //	va_list		*argscount;
@@ -39,5 +40,6 @@ int		ft_print_string(t_data *data);
 int		ft_print_unsigned_int(t_data *data);
 int		ft_char_comp(char c, char *set);
 char	*ft_utoa(size_t n);
+char	*ft_hextoa(size_t n, t_data *data);
 
 #endif

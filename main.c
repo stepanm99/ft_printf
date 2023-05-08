@@ -29,8 +29,8 @@ int	main(void)
 	ft_printf("integer: |%i|\n", -42);
 	ft_printf("decimal: |%d|\n", 42);
 	ft_printf("unsigned: |%u|\n", n);
-	ft_printf("hex low: |%x|\n", 0x42F5);
-	ft_printf("hex up: |%X|\n", 0x42F5);
+	ft_printf("hex low: |%x|\n", 125);
+	ft_printf("hex up: |%X|\n", 125);
 	ft_printf("percent: |%%|\n");
 	ft_printf("with flag: |%-#+0 d", 10);
 
