@@ -20,7 +20,7 @@ typedef struct s_data
 //	va_list		*argscount;
 	const char	*fmt;
 //	const char	*fmtcount;
-	char		spcnbr[10];
+	int			padnum;
 } t_data;
 
 t_data	ft_datainit(va_list *args, const char *fmt);
