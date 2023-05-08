@@ -27,7 +27,7 @@ t_data	ft_datainit(va_list *args, const char *fmt);
 
 int		ft_printf(const char *fmt, ...);
 int		ft_type_resolve(t_data *data);
-int		ft_check_flag(t_data *data);
+void	ft_check_flag(t_data *data);
 int		ft_print_character(t_data *data);
 int		ft_print_decimal(t_data *data);
 int		ft_print_flag(t_data *data);

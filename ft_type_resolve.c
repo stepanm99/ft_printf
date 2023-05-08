@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:40:38 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/05 19:47:04 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:33:19 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int	ft_type_resolve(t_data *data)
 {
-//	if (data->write == 0)
-//		data->fmtcount++;
-//	else
 	data->fmt++;
 	if (*data->fmt == 'c')
 		ft_print_character(data);

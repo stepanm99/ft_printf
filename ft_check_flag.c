@@ -6,15 +6,14 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/05 19:45:16 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:35:42 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_check_flag(t_data *data)
+void	ft_check_flag(t_data *data)
 {
-	printf("message from check flag\n");
 	while (!ft_char_comp(*data->fmt, "cspdiuxX%"))
 	{
 		if (*data->fmt == '-')
@@ -29,5 +28,6 @@ int	ft_check_flag(t_data *data)
 			data->plus = 1;
 		data->fmt++;
 	}
-	return (0);
+	data->fmt--;
+	ft_type_resolve(data);
 }

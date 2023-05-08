@@ -27,7 +27,7 @@ static int	getlen(size_t n)
 		return (1);
 	while (n)
 	{
-		n = n / 10;
+		n = n / 16;
 		len++;
 	}
 	return (len);
@@ -52,7 +52,7 @@ static int	getdigit(size_t n, char *ptr, int l, t_data *data)
 			else
 				ptr[l - 1] = (mod - 10) + 'a';
 		}
-		n = n / 10;
+		n = n / 16;
 		l--;
 	}
 	return (0);
