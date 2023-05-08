@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/08 22:18:08 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/09 00:01:35 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,13 @@
 
 static void	ft_get_pad_num(t_data *data)
 {
-	int		i;
-	int		j;
-	char	spcnbr[10];
-
-	i = 0;
-	j = 0;
-	while (!ft_char_comp(*data->fmt, "cspdiuxX% -#+"))
+	while (ft_char_comp(*data->fmt, "0123456789"))
 	{
-		i++;
+		data->padnum = data->padnum * 10 + (*data->fmt - '0');
 		data->fmt++;
 	}
-	while (i !=0)
-	{
-		spcnbr[j] = *data->fmt;
-		i--;
-		j++;
-		data->fmt--;
-	}
-	while (j != 0)
-	{
-		data->fmt++;
-		j--;
-	}
-	data->padnum = ft_atoi(spcnbr);
-	ft_type_resolve(data);
+	printf("position in fmt: %c\n", *data->fmt);
+//	printf("data->padnum = %i\n", data->padnum);
 }
 
 void	ft_check_flag(t_data *data)
@@ -55,7 +37,7 @@ void	ft_check_flag(t_data *data)
 			data->hash = 1;
 		if (*data->fmt == '+')
 			data->plus = 1;
-		if (ft_char_comp(*data->fmt, "0123456789") && data->zero == 1)
+		if (ft_char_comp(*data->fmt, "0123456789") && !(data->padnum > 0))
 			ft_get_pad_num(data);
 		data->fmt++;
 	}

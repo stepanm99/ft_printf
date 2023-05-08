@@ -4,7 +4,7 @@ int	main(void)
 {
 //	char	data[] = "\n\ttext from the variable\n";
 //	printf("return value: %d\n\n", ft_printf("data of the string %qjkjsld\nnext %d line\n\0"));
-	int		count;
+//	int		count;
 /*
 	data = ft_datainit();
 	printf("value of left %d\n", data.dash);
@@ -19,10 +19,10 @@ int	main(void)
 	return (0);*/
 
 	//general test
-	size_t	n;
+//	size_t	n;
 
-	n = 3047483647;
-	ft_printf("12345\n");
+//	n = 3047483647;
+/*	ft_printf("12345\n");
 	ft_printf("chnaracter: |%c|\n", 'c');
 	ft_printf("string: |%s|\n", "test");
 	ft_printf("pointer: |%p|\n", &count);
@@ -32,13 +32,13 @@ int	main(void)
 	ft_printf("hex low: |%#x|\n", 125);
 	printf("hex low: |%#x|\n", 125);
 	ft_printf("hex up: |%#X|\n", 125);
-	ft_printf("percent: |%%|\n");
-	ft_printf("with flag: |%-#+0 d", 10);
+	ft_printf("percent: |%%|\n");*/
+	ft_printf("with flag: |%12d|\n", 256);
 
-	printf("this is pointer: |%p|\n", &n);
+/*	printf("this is pointer: |%p|\n", &n);
 	ft_printf("this should be same thing |%p|\n", &n);
 
 	count = ft_printf("This is number: %d\n", 120);
-	printf("number of printed characters: %d\n", count);
+	printf("number of printed characters: %d\n", count);*/
 	return (0);
 }
