@@ -21,8 +21,8 @@ int	main(void)
 	//general test
 	size_t	n;
 
-	n = 3047483647;
-//*	ft_printf("12345\n");
+	n = -3047;
+/*	ft_printf("12345\n");
 	ft_printf("chnaracter: |%-025c|\n", 'c');
 	ft_printf("string: |%025s|\n", "test");
 	ft_printf("pointer: |%-25p|\n", &n);
@@ -33,7 +33,7 @@ int	main(void)
 	printf("hex low: |%#12x|\n", 125);
 	ft_printf("hex up: |%#30X|\n", 125);
 	ft_printf("percent: |%5%|\n");//*/
-	count = ft_printf("with flag: |%034u|\n", n);
+	count = ft_printf("with flag: |%+ 10i|\n", n);
 
 /*	printf("this is pointer: |%p|\n", &n);
 	ft_printf("this should be same thing |%p|\n", &n);

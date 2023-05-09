@@ -6,13 +6,30 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:09:41 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/09 22:27:10 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/10 00:48:50 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//decimal could be with floating point!!!
+//decimal could be with floating point???
+
+static void	plus_space(t_data *data, char *string)
+{
+	if ((data->padnum > 0) && !ft_char_comp('-', string))
+			data->padnum--;
+	if (!ft_char_comp('-', string) && data->plus && !(data->padnum > 0))
+	{
+		write(1, "+", 1);
+		data->counter++;
+	}
+	if (!ft_char_comp('-', string) && data->space && !(data->padnum > 0) &&
+			!data->plus)
+	{
+		write(1, " ", 1);
+		data->counter++;
+	}
+}
 
 int	ft_print_decimal(t_data *data)
 {
@@ -20,8 +37,10 @@ int	ft_print_decimal(t_data *data)
 
 	string = ft_itoa(va_arg(*data->args, int));
 	data->varl = ft_strlen(string);
+	plus_space(data, string);
 	if (data->padnum && !data->dash)
 		ft_print_pad(data);
+	plus_space(data, string);
 	while (*string != '\0')
 		{
 			write(1, string, 1);
