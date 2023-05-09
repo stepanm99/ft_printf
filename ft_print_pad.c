@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 21:39:11 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/09 22:05:20 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/10 00:04:25 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_print_pad(t_data *data)
 {
 	char	c;
 
-	if (data->zero)
+	if (data->zero && !data->dash)
 		c = '0';
 	else
 		c = ' ';

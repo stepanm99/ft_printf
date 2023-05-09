@@ -22,18 +22,18 @@ int	main(void)
 	size_t	n;
 
 	n = 3047483647;
-/*	ft_printf("12345\n");
-	ft_printf("chnaracter: |%c|\n", 'c');
-	ft_printf("string: |%s|\n", "test");
-	ft_printf("pointer: |%p|\n", &n);
-	ft_printf("integer: |%i|\n", -42);
-	ft_printf("decimal: |%d|\n", 42);
-	ft_printf("unsigned: |%u|\n", n);
-	ft_printf("hex low: |%#x|\n", 125);
-	printf("hex low: |%#x|\n", 125);
-	ft_printf("hex up: |%#X|\n", 125);
-	ft_printf("percent: |%%|\n");//*/
-	count = ft_printf("with flag: |%25%|\n", &n);
+//*	ft_printf("12345\n");
+	ft_printf("chnaracter: |%-025c|\n", 'c');
+	ft_printf("string: |%025s|\n", "test");
+	ft_printf("pointer: |%-25p|\n", &n);
+	ft_printf("integer: |%05i|\n", -42);
+	ft_printf("decimal: |%8d|\n", 42);
+	ft_printf("unsigned: |%-015u|\n", n);
+	ft_printf("hex low: |%#0-51x|\n", 125);
+	printf("hex low: |%#12x|\n", 125);
+	ft_printf("hex up: |%#30X|\n", 125);
+	ft_printf("percent: |%5%|\n");//*/
+	count = ft_printf("with flag: |%034u|\n", n);
 
 /*	printf("this is pointer: |%p|\n", &n);
 	ft_printf("this should be same thing |%p|\n", &n);
