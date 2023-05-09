@@ -33,7 +33,7 @@ int	main(void)
 	printf("hex low: |%#x|\n", 125);
 	ft_printf("hex up: |%#X|\n", 125);
 	ft_printf("percent: |%%|\n");//*/
-	count = ft_printf("with flag: |%012c|\n", 'x');
+	count = ft_printf("with flag: |%25%|\n", &n);
 
 /*	printf("this is pointer: |%p|\n", &n);
 	ft_printf("this should be same thing |%p|\n", &n);
