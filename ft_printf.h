@@ -17,10 +17,9 @@ typedef struct s_data
 	int			hexup;
 	int			counter;
 	va_list		*args;
-//	va_list		*argscount;
 	const char	*fmt;
-//	const char	*fmtcount;
 	int			padnum;
+	int			varl;
 } t_data;
 
 t_data	ft_datainit(va_list *args, const char *fmt);
@@ -41,5 +40,6 @@ int		ft_print_unsigned_int(t_data *data);
 int		ft_char_comp(char c, char *set);
 char	*ft_utoa(size_t n);
 char	*ft_hextoa(size_t n, t_data *data);
+void	ft_print_pad(t_data *data);
 
 #endif

@@ -3,10 +3,8 @@
 int	main(void)
 {
 	int	n;
-	int	*ptr;
 
 	n = 9;
-	ptr = &n;
-	printf("this is pointer: %lu\n", ptr);
+	printf("this is pointer: |%030d|\n", n);
 	return (0);
 }

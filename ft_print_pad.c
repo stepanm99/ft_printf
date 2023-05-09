@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_datainit.c                                      :+:      :+:    :+:   */
+/*   ft_print_pad.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 21:07:54 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/09 21:50:24 by smelicha         ###   ########.fr       */
+/*   Created: 2023/05/09 21:39:11 by smelicha          #+#    #+#             */
+/*   Updated: 2023/05/09 21:56:57 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_data	ft_datainit(va_list *args, const char *fmt)
+void	ft_print_pad(t_data *data)
 {
-	struct s_data	data;
+	char	c;
 
-	data.dash = 0;
-	data.zero = 0;
-	data.space = 0;
-	data.hash = 0;
-	data.plus = 0;
-	data.write = 1;
-	data.hexup = 0;
-	data.counter = 0;
-	data.args = args;
-	data.fmt = fmt;
-	data.padnum = 0;
-	data.varl = 0;
-	return (data);
+	if (data->zero)
+		c = '0';
+	else
+		c = ' ';
+	if (data->padnum > data->varl)
+		data->padnum = data->padnum - data->varl;
+	while (data->padnum != 0)
+	{
+		write(1, &c, 1);
+		data->counter++;
+		data->padnum--;
+	}
 }
