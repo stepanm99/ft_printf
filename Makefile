@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/05 19:56:12 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/09 20:07:49 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,12 @@ test: all
 maintest: all
 	@echo "~~~ Testing with main function ~~~"
 	@$(CC) $(SRC) Libft/libft.a main.c $(FLAGS)
-#for testing purposes at home on linux $(NAME) was changed to $(SRC)
 	@./a.out
+
+maindebug: all
+	@echo "~~~ Testing with main function ~~~"
+	@$(CC) $(SRC) Libft/libft.a main.c -g $(FLAGS) -o prog
+#for testing purposes at home on linux $(NAME) was changed to $(SRC)
+	@./prog
 
 .PHONY: all clean fclean re test
