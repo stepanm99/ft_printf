@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/10 22:59:03 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/11 00:08:30 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ re: fclean all
 test: all
 	@./$(NAME)
 
+bonus: all
+
 maintest: all
 	@echo "~~~ Testing with main function ~~~"
 	@$(CC) $(SRC) Libft/libft.a main.c $(FLAGS)
@@ -60,4 +62,4 @@ maindebug: all
 #for testing purposes at home on linux $(NAME) was changed to $(SRC)
 	@./prog
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re test bonus maintest maindebug
