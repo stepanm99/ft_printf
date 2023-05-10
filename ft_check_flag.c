@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/10 00:02:35 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/10 23:43:34 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ static void	ft_get_pad_num(t_data *data)
 		data->padnum = data->padnum * 10 + (*data->fmt - '0');
 		data->fmt++;
 	}
-//	printf("position in fmt: %c\n", *data->fmt);
 	data->fmt--;
-//	printf("data->padnum = %i\n", data->padnum);
 }
 
 void	ft_check_flag(t_data *data)

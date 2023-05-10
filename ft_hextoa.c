@@ -1,6 +1,16 @@
-#include"Libft/libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hextoa.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/10 23:44:15 by smelicha          #+#    #+#             */
+/*   Updated: 2023/05/10 23:44:21 by smelicha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-#include <stdio.h>
 
 static int	getlen(size_t n);
 static int	getdigit(size_t n, char *ptr, int l, t_data *data);

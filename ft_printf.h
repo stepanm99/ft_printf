@@ -1,8 +1,20 @@
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/10 23:49:36 by smelicha          #+#    #+#             */
+/*   Updated: 2023/05/10 23:51:56 by smelicha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 # include<stdlib.h>
 # include<unistd.h>
-#include <stdarg.h>
+# include <stdarg.h>
 # include "Libft/libft.h"
 # include<stdio.h>
 
@@ -12,7 +24,7 @@ typedef struct s_data
 	int			zero;
 	int			space;
 	int			hash;
-	int 		plus;
+	int			plus;
 	int			write;
 	int			hexup;
 	int			counter;
@@ -20,7 +32,7 @@ typedef struct s_data
 	const char	*fmt;
 	int			padnum;
 	int			varl;
-} t_data;
+}	t_data;
 
 t_data	ft_datainit(va_list *args, const char *fmt);
 

@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:20 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/10 23:31:47 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/10 23:47:18 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static void	plus_space(t_data *data, char *string)
 		write(1, "+", 1);
 		data->counter++;
 	}
-	if (!ft_char_comp('-', string) && data->space && !(data->padnum > 0) &&
-			!data->plus)
+	if (!ft_char_comp('-', string) && data->space && !(data->padnum > 0)
+		&& !data->plus)
 	{
 		write(1, " ", 1);
 		data->counter++;
@@ -42,11 +42,11 @@ int	ft_print_integer(t_data *data)
 		ft_print_pad(data);
 	plus_space(data, string);
 	while (*string != '\0')
-		{
-			write(1, string, 1);
-			data->counter++;
-			string++;
-		}
+	{
+		write(1, string, 1);
+		data->counter++;
+		string++;
+	}
 	if (data->padnum && data->dash)
 		ft_print_pad(data);
 	free(ptr);
