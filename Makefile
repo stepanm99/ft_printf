@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/09 21:49:29 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/10 22:59:03 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ SRC = ft_printf.c ft_datainit.c ft_check_flag.c ft_print_character.c \
 	ft_print_decimal.c ft_print_flag.c ft_print_hex_low.c ft_print_hex_up.c \
 	ft_print_integer.c ft_print_percent.c ft_print_pointer.c ft_print_string.c \
 	ft_print_unsigned_int.c ft_type_resolve.c ft_char_comp.c ft_utoa.c \
-	ft_hextoa.c ft_print_pad.c
+	ft_hextoa.c ft_print_pad.c Libft/*.c leakcheck.c
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
 OBJ	= $(SRC:.c=.o)
 
-all: $(NAME)
+all: $(NAME) libft
 
 $(NAME): $(OBJ)
 	@echo "Linking $@"

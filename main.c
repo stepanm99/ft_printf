@@ -1,5 +1,7 @@
 #include "ft_printf.h"
 
+void	check_leaks();
+
 int	main(void)
 {
 //	char	data[] = "\n\ttext from the variable\n";
@@ -40,5 +42,7 @@ int	main(void)
 
 	count = ft_printf("This is number: %d\n", 120);*/
 	printf("number of printed characters: %d\n", count);
+//	printf(" NULL %s NULL \n", NULL);
+	check_leaks();
 	return (0);
 }
