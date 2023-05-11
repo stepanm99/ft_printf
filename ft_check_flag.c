@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/10 23:43:34 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/11 20:42:32 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,26 @@
 
 static void	ft_get_pad_num(t_data *data)
 {
-	while (ft_char_comp(*data->fmt, "0123456789"))
+	if (!data->dot)
 	{
-		data->padnum = data->padnum * 10 + (*data->fmt - '0');
-		data->fmt++;
+		while (ft_char_comp(*data->fmt, "0123456789"))
+		{
+			data->padnum = data->padnum * 10 + (*data->fmt - '0');
+			data->fmt++;
+		}
 	}
-	data->fmt--;
+	if (*data->fmt == '.')
+		data->dot = 1;
+	data->fmt++;
+	if (data->dot)
+	{
+		while (ft_char_comp(*data->fmt, "0123456789"))
+		{
+			data->prec = data->prec * 10 + (*data->fmt - '0');
+			data->fmt++;
+		}
+	}
+	data->fmt -= 2;
 }
 
 void	ft_check_flag(t_data *data)
@@ -36,7 +50,8 @@ void	ft_check_flag(t_data *data)
 			data->hash = 1;
 		if (*data->fmt == '+')
 			data->plus = 1;
-		if (ft_char_comp(*data->fmt, "0123456789") && !(data->padnum > 0))
+		if (ft_char_comp(*data->fmt, "0123456789") && !((data->padnum > 0) 
+			|| (data->prec > 0)))
 			ft_get_pad_num(data);
 		data->fmt++;
 	}

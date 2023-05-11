@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	check_leaks();
+//void	check_leaks();
 
 int	main(void)
 {
@@ -35,7 +35,7 @@ int	main(void)
 	printf("hex low: |%#12x|\n", 125);
 	ft_printf("hex up: |%#30X|\n", 125);
 	ft_printf("percent: |%5%|\n");//*/
-	count = ft_printf("with flag: |%+ 10i|\n", n);
+	count = ft_printf("with flag: |%5.8s|\n", "test56789012345");
 
 /*	printf("this is pointer: |%p|\n", &n);
 	ft_printf("this should be same thing |%p|\n", &n);
@@ -43,6 +43,6 @@ int	main(void)
 	count = ft_printf("This is number: %d\n", 120);*/
 	printf("number of printed characters: %d\n", count);
 //	printf(" NULL %s NULL \n", NULL);
-	check_leaks();
+//	check_leaks();
 	return (0);
 }

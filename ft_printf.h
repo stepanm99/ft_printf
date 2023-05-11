@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 23:49:36 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/10 23:51:56 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/11 20:04:19 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ typedef struct s_data
 	int			space;
 	int			hash;
 	int			plus;
+	int			dot;
 	int			write;
 	int			hexup;
 	int			counter;
 	va_list		*args;
 	const char	*fmt;
 	int			padnum;
+	int			prec;
 	int			varl;
 }	t_data;
 
