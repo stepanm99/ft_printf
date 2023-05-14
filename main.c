@@ -11,9 +11,9 @@ int	main(void)
 	count_my = 0;
 	count_og = 0;
 	printf("--------------------------\n");
-	count_my = ft_printf(" %-3d ", 1);
+	count_my = ft_printf(" %u %u %u %u %u %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	printf("\n--------------------------\n");
-	count_og = printf(" %-3d ", 1);
+	count_og = printf(" %u %u %lu %lu %lu %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	printf("\n--------------------------\n");
 	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
 	printf("\n--------------------------\n");

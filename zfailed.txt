@@ -1,3 +1,5 @@
+catched signal: Segmentation fault: 11 when testing format: "!%59c!" with arg: (char)0
+
 For /Users/smelicha/francinette/tests/printf/printfTester/tests/u_test.cpp:
 48: 	TEST(24, print(" %u ", LONG_MAX));
 49: 	TEST(25, print(" %u ", LONG_MIN));

@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:33 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/10 23:48:39 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/14 21:59:30 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ int	ft_print_unsigned_int(t_data *data)
 {
 	char	*string;
 	char	*ptr;
+	long unsigned	t;
 
-	string = ft_utoa(va_arg(*data->args, size_t));
+	t = (long unsigned)va_arg(*data->args, long unsigned);
+	string = ft_utoa(t);
 	ptr = string;
 	data->varl = ft_strlen(string);
 	if (data->padnum && !data->dash)
