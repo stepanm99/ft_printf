@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/15 21:24:16 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/15 22:38:52 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ static void	ft_get_pad_num(t_data *data)
 	{
 		while (ft_char_comp(*data->fmt, "0123456789"))
 		{
-//			printf("\nfmt ffrom getpadnum: %c\n", *data->fmt);
 			data->padnum = data->padnum * 10 + (*data->fmt - '0');
 			data->fmt++;
 		}
 	}
-//	printf("padnum from getpadnum: %i\n", data->padnum);
 	if (*data->fmt == '.')
 		data->dot = 1;
 	data->fmt++;
@@ -58,6 +56,5 @@ void	ft_check_flag(t_data *data)
 		data->fmt++;
 	}
 	data->fmt--;
-//	printf("padnum from checkflag: %i\n", data->padnum);
 	ft_type_resolve(data);
 }

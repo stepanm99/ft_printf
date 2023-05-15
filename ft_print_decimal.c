@@ -6,35 +6,11 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:09:41 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/15 22:35:20 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/15 22:38:38 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-//decimal could be with floating point???
-/*
-static void	plus_space(t_data *data, char *string)
-{
-	if (((data->padnum > 0) && !ft_char_comp('-', string))
-		&& data->plusspace)
-		{
-			data->padnum--;
-			data->plusspace = 0;
-		}
-	if (!ft_char_comp('-', string) && data->plus && !(data->padnum > 0))
-	{
-		write(1, "+", 1);
-		data->counter++;
-	}
-	if (!ft_char_comp('-', string) && data->space && !(data->padnum > 0)
-		&& !data->plus)
-	{
-		write(1, " ", 1);
-		data->counter++;
-	}
-//	printf("padnum from plusspace: %i\n", data->padnum);
-}*/
 
 static void	plus_space(t_data *data, char *string)
 {
@@ -54,7 +30,6 @@ static void	plus_space(t_data *data, char *string)
 		data->counter++;
 		data->varl++;
 	}
-//	printf("padnum from plusspace: %i\n", data->padnum);
 }
 
 static void	plus_pad_resolve(t_data *data, char *string)
