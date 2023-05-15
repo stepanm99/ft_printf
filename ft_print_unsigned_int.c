@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:33 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/14 21:59:30 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/15 21:29:41 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ int	ft_print_unsigned_int(t_data *data)
 {
 	char	*string;
 	char	*ptr;
-	long unsigned	t;
+	unsigned long long	t;
 
-	t = (long unsigned)va_arg(*data->args, long unsigned);
+	t = (unsigned long long)va_arg(*data->args, unsigned long long);
+//	printf("\nint from unigned long:: %llu", t);
+//	if (t == 140728898420736 && (int)t == 0)
+//		t = 0;
 	string = ft_utoa(t);
 	ptr = string;
 	data->varl = ft_strlen(string);

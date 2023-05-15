@@ -6,18 +6,22 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:09:41 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/10 23:45:40 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/15 22:35:20 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 //decimal could be with floating point???
-
+/*
 static void	plus_space(t_data *data, char *string)
 {
-	if ((data->padnum > 0) && !ft_char_comp('-', string))
+	if (((data->padnum > 0) && !ft_char_comp('-', string))
+		&& data->plusspace)
+		{
 			data->padnum--;
+			data->plusspace = 0;
+		}
 	if (!ft_char_comp('-', string) && data->plus && !(data->padnum > 0))
 	{
 		write(1, "+", 1);
@@ -29,6 +33,43 @@ static void	plus_space(t_data *data, char *string)
 		write(1, " ", 1);
 		data->counter++;
 	}
+//	printf("padnum from plusspace: %i\n", data->padnum);
+}*/
+
+static void	plus_space(t_data *data, char *string)
+{
+	if ((ft_char_comp('-', string)) && data->plusspace)
+	{
+		data->plusspace = 0;
+	}
+	if (!ft_char_comp('-', string) && data->plus)
+	{
+		write(1, "+", 1);
+		data->counter++;
+		data->varl++;
+	}
+	if (!ft_char_comp('-', string) && data->space && (data->padnum > 0))
+	{
+		write(1, " ", 1);
+		data->counter++;
+		data->varl++;
+	}
+//	printf("padnum from plusspace: %i\n", data->padnum);
+}
+
+static void	plus_pad_resolve(t_data *data, char *string)
+{
+	if (data->dash)
+		plus_space(data, string);
+	if (ft_char_comp('-', string) && !data->dash)
+	{
+		write(1, "-", 1);
+		data->counter++;
+	}
+	if (data->padnum && !data->dash)
+		ft_print_pad(data);
+	if (!data->dash)
+		plus_space(data, string);
 }
 
 int	ft_print_decimal(t_data *data)
@@ -39,10 +80,9 @@ int	ft_print_decimal(t_data *data)
 	string = ft_itoa(va_arg(*data->args, int));
 	ptr = string;
 	data->varl = ft_strlen(string);
-	plus_space(data, string);
-	if (data->padnum && !data->dash)
-		ft_print_pad(data);
-	plus_space(data, string);
+	plus_pad_resolve(data, string);
+	if (*string == '-' && !data->dash)
+		string++;
 	while (*string != '\0')
 	{
 		write(1, string, 1);

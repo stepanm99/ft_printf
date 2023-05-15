@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 23:49:36 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/14 20:30:34 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/15 22:29:45 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_data
 	int			hash;
 	int			plus;
 	int			dot;
+	int			plusspace;
 	int			write;
 	int			hexup;
 	int			counter;
@@ -52,7 +53,7 @@ int		ft_print_pointer(t_data *data);
 int		ft_print_string(t_data *data);
 int		ft_print_unsigned_int(t_data *data);
 int		ft_char_comp(char c, char *set);
-char	*ft_utoa(long unsigned n);
+char	*ft_utoa(unsigned long long n);
 char	*ft_hextoa(long unsigned n, t_data *data);
 void	ft_print_pad(t_data *data);
 
