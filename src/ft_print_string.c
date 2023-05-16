@@ -6,23 +6,44 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:30 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/15 19:49:47 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/16 22:52:08 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static char	*null_case(char *string)
+{
+	char	*ptr;
+
+	free(string);
+	string = (char *)malloc(6 * (sizeof (char)));
+	ptr = string;
+	*string = '(';
+	string++;
+	*string = 'n';
+	string++;
+	*string = 'u';
+	string++;
+	*string = 'l';
+	string++;
+	*string = 'l';
+	string++;
+	*string = ')';
+	string++;
+	return (ptr);
+}
+
 int	ft_print_string(t_data *data)
 {
 	char	*string;
+	char	*ptr;
 
 	string = va_arg(*data->args, char *);
+	ptr = string;
 	if (string == NULL)
-	{
-		write(1, "(null)", 6);
-		data->counter += 6;
-		return (0);
-	}
+		string = null_case(string);
+	printf("\n%s\n", string);
 	data->varl = ft_strlen(string);
 	if (data->padnum && !data->dash)
 		ft_print_pad(data);
@@ -38,5 +59,6 @@ int	ft_print_string(t_data *data)
 	}
 	if (data->padnum && data->dash)
 		ft_print_pad(data);
+	free(ptr);
 	return (0);
 }

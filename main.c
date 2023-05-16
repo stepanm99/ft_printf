@@ -52,5 +52,12 @@ int	main(void)
 	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
 	printf("\n--------------------------\n");
 //	check_leaks();
+	printf("--------------------------\n");
+	count_my = ft_printf("%23s", NULL);
+	printf("\n--------------------------\n");
+	count_og = printf("%23s", NULL);
+	printf("\n--------------------------\n");
+	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
+	printf("\n--------------------------\n");
 	return (0);
 }
