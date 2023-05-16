@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 23:49:36 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/15 23:59:20 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/16 21:46:22 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include<stdlib.h>
 # include<unistd.h>
 # include <stdarg.h>
-# include "Libft/libft.h"
+# include "../Libft/libft.h"
 # include<stdio.h>
 
 typedef struct s_data

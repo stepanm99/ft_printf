@@ -6,24 +6,30 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/16 19:38:57 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/16 21:49:25 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libftprintf.a
 
-SRC = ft_printf.c ft_datainit.c ft_check_flag.c ft_print_character.c \
-	ft_print_decimal.c ft_print_flag.c ft_print_hex_low.c ft_print_hex_up.c \
-	ft_print_integer.c ft_print_percent.c ft_print_pointer.c ft_print_string.c \
-	ft_print_unsigned_int.c ft_type_resolve.c ft_char_comp.c ft_utoa.c \
-	ft_hextoa.c ft_print_pad.c
+SRCDIR = ./src/
+
+SRC = $(shell find . -name "ft_printf.c" -o -name "ft_datainit.c" -o -name \
+					"ft_check_flag.c" -o -name "ft_print_character.c" -o -name \
+					"ft_print_decimal.c" -o -name "ft_print_flag.c" -o -name \
+					"ft_print_hex_low.c" -o -name "ft_print_hex_up.c" -o -name \
+					"ft_print_integer.c" -o -name "ft_print_percent.c" -o -name \
+					"ft_print_pointer.c" -o -name "ft_print_string.c" -o -name \
+					"ft_print_unsigned_int.c" -o -name "ft_type_resolve.c" -o -name \
+					"ft_char_comp.c" -o -name "ft_utoa.c" -o -name \
+					"ft_hextoa.c" -o -name "ft_print_pad.c" -type f)
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
 OBJ	= $(SRC:.c=.o)
 
-all: $(NAME) libft
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "Linking $@"
@@ -36,15 +42,17 @@ $(NAME): $(OBJ)
 	@echo "Compiling $<"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-libft:
-	@echo "Compiling and linking Libft"
-	@cd Libft && make fclean && make
+#libft:
+#	@echo "Compiling and linking Libft"
+#	@cd Libft && make fclean && make
 
 clean:
 	@rm -f $(OBJ) $(OBJB)
+	@make clean -C ./Libft
 
 fclean: clean
 	@rm -f $(NAME)
+	@make fcelan -C ./Libft
 
 re: fclean all
 
