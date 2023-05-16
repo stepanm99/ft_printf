@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:30 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/16 22:52:08 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/16 23:47:17 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	*null_case(char *string)
 	char	*ptr;
 
 	free(string);
-	string = (char *)malloc(6 * (sizeof (char)));
+	string = (char *)malloc(7 * (sizeof (char)));
 	ptr = string;
 	*string = '(';
 	string++;
@@ -31,6 +31,8 @@ static char	*null_case(char *string)
 	string++;
 	*string = ')';
 	string++;
+	*string = '\0';
+	string++;
 	return (ptr);
 }
 
@@ -43,7 +45,6 @@ int	ft_print_string(t_data *data)
 	ptr = string;
 	if (string == NULL)
 		string = null_case(string);
-	printf("\n%s\n", string);
 	data->varl = ft_strlen(string);
 	if (data->padnum && !data->dash)
 		ft_print_pad(data);
