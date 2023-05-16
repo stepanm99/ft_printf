@@ -1,7 +1,3 @@
-- [OUTPUT] ft_printf("%23s", NULL)
-   expected: "                 (null)"
-   actual:   "(null)"
-
 - [OUTPUT] ft_printf("%.s", NULL)
    expected: ""
    actual:   "(null)"
@@ -74,18 +70,6 @@
    expected: "    helwor"
    actual:   "  helwor"
 
-- [OUTPUT] ft_printf("%32s", NULL)
-   expected: "                          (null)"
-   actual:   "(null)"
-
-- [OUTPUT] ft_printf("%-32s", NULL)
-   expected: "(null)                          "
-   actual:   "(null)"
-
-- [OUTPUT] ft_printf("%-16s", NULL)
-   expected: "(null)          "
-   actual:   "(null)"
-
 - [OUTPUT] ft_printf("%.9s", "NULL")
    expected: "NULL"
    actual:   "     NULL"
@@ -122,6 +106,10 @@
    expected: "(nu"
    actual:   "(null)"
 
+- [OUTPUT] ft_printf("%.09s", NULL)
+   expected: "(null)"
+   actual:   "000(null)"
+
 - [OUTPUT] ft_printf("%.01s", "\0")
    expected: ""
    actual:   "0"
@@ -144,11 +132,11 @@
 
 - [OUTPUT] ft_printf("%3.s", NULL)
    expected: "   "
-   actual:   "(null)"
+   actual:   ""
 
 - [OUTPUT] ft_printf("%10.s", NULL)
    expected: "          "
-   actual:   "(null)"
+   actual:   "    "
 
 - [OUTPUT] ft_printf("%-3.s", s_hidden)
    expected: "   "
@@ -160,11 +148,11 @@
 
 - [OUTPUT] ft_printf("%-3.s", NULL)
    expected: "   "
-   actual:   "(null)"
+   actual:   ""
 
 - [OUTPUT] ft_printf("%-8.s", NULL)
    expected: "        "
-   actual:   "(null)"
+   actual:   "  "
 
 - [OUTPUT] ft_printf("%3.1s", s_hidden)
    expected: "  h"
@@ -176,11 +164,11 @@
 
 - [OUTPUT] ft_printf("%3.1s", NULL)
    expected: "  ("
-   actual:   "(null)"
+   actual:   "("
 
 - [OUTPUT] ft_printf("%9.1s", NULL)
    expected: "        ("
-   actual:   "(null)"
+   actual:   "   ("
 
 - [OUTPUT] ft_printf("%-3.1s", s_hidden)
    expected: "h  "
@@ -192,19 +180,11 @@
 
 - [OUTPUT] ft_printf("%-3.1s", NULL)
    expected: "(  "
-   actual:   "(null)"
+   actual:   "("
 
 - [OUTPUT] ft_printf("%-9.1s", NULL)
    expected: "(        "
-   actual:   "(null)"
-
-- [OUTPUT] ft_printf("%20.6s", NULL)
-   expected: "              (null)"
-   actual:   "(null)"
-
-- [OUTPUT] ft_printf("%-10.8s", NULL)
-   expected: "(null)    "
-   actual:   "(null)"
+   actual:   "(   "
 
 - [OUTPUT] ft_printf("%-.00s", s_hidden)
    expected: ""
@@ -775,28 +755,28 @@
    actual:   "0    "
 
 - [OUTPUT] ft_printf("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "                                                           0x10d9351e8                                                           0x10d9351e9                                                           0x10d9351ea                                                           0x10d9351ec                                                           0x10d9351f0                                                           0x10d9351f4                                                           0x10d9351f8                                                           0x10d935200                                                           0x10d935208                                                           0x10d935210                                                           0x10d935218                                                           0x10d935220"
-   actual:   "                                                             0x10d9351e8                                                             0x10d9351e9                                                             0x10d9351ea                                                             0x10d9351ec                                                             0x10d9351f0                                                             0x10d9351f4                                                             0x10d9351f8                                                             0x10d935200                                                             0x10d935208                                                             0x10d935210                                                             0x10d935218                                                             0x10d935220"
+   expected: "                                                           0x105e701e8                                                           0x105e701e9                                                           0x105e701ea                                                           0x105e701ec                                                           0x105e701f0                                                           0x105e701f4                                                           0x105e701f8                                                           0x105e70200                                                           0x105e70208                                                           0x105e70210                                                           0x105e70218                                                           0x105e70220"
+   actual:   "                                                             0x105e701e8                                                             0x105e701e9                                                             0x105e701ea                                                             0x105e701ec                                                             0x105e701f0                                                             0x105e701f4                                                             0x105e701f8                                                             0x105e70200                                                             0x105e70208                                                             0x105e70210                                                             0x105e70218                                                             0x105e70220"
 
 - [OUTPUT] ft_printf("%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "     0x10d9351e8     0x10d9351e9     0x10d9351ea     0x10d9351ec     0x10d9351f0     0x10d9351f4     0x10d9351f8     0x10d935200     0x10d935208     0x10d935210     0x10d935218     0x10d935220"
-   actual:   "       0x10d9351e8       0x10d9351e9       0x10d9351ea       0x10d9351ec       0x10d9351f0       0x10d9351f4       0x10d9351f8       0x10d935200       0x10d935208       0x10d935210       0x10d935218       0x10d935220"
+   expected: "     0x105e701e8     0x105e701e9     0x105e701ea     0x105e701ec     0x105e701f0     0x105e701f4     0x105e701f8     0x105e70200     0x105e70208     0x105e70210     0x105e70218     0x105e70220"
+   actual:   "       0x105e701e8       0x105e701e9       0x105e701ea       0x105e701ec       0x105e701f0       0x105e701f4       0x105e701f8       0x105e70200       0x105e70208       0x105e70210       0x105e70218       0x105e70220"
 
 - [OUTPUT] ft_printf("%32p%32p%32p%32p%32p%32p%32p%32p%32p%32p%32p%32p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "                     0x10d9351e8                     0x10d9351e9                     0x10d9351ea                     0x10d9351ec                     0x10d9351f0                     0x10d9351f4                     0x10d9351f8                     0x10d935200                     0x10d935208                     0x10d935210                     0x10d935218                     0x10d935220"
-   actual:   "                       0x10d9351e8                       0x10d9351e9                       0x10d9351ea                       0x10d9351ec                       0x10d9351f0                       0x10d9351f4                       0x10d9351f8                       0x10d935200                       0x10d935208                       0x10d935210                       0x10d935218                       0x10d935220"
+   expected: "                     0x105e701e8                     0x105e701e9                     0x105e701ea                     0x105e701ec                     0x105e701f0                     0x105e701f4                     0x105e701f8                     0x105e70200                     0x105e70208                     0x105e70210                     0x105e70218                     0x105e70220"
+   actual:   "                       0x105e701e8                       0x105e701e9                       0x105e701ea                       0x105e701ec                       0x105e701f0                       0x105e701f4                       0x105e701f8                       0x105e70200                       0x105e70208                       0x105e70210                       0x105e70218                       0x105e70220"
 
 - [OUTPUT] ft_printf("%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x10d9351e8                                                           0x10d9351e9                                                           0x10d9351ea                                                           0x10d9351ec                                                           0x10d9351f0                                                           0x10d9351f4                                                           0x10d9351f8                                                           0x10d935200                                                           0x10d935208                                                           0x10d935210                                                           0x10d935218                                                           0x10d935220                                                           "
-   actual:   "0x10d9351e8                                                             0x10d9351e9                                                             0x10d9351ea                                                             0x10d9351ec                                                             0x10d9351f0                                                             0x10d9351f4                                                             0x10d9351f8                                                             0x10d935200                                                             0x10d935208                                                             0x10d935210                                                             0x10d935218                                                             0x10d935220                                                             "
+   expected: "0x105e701e8                                                           0x105e701e9                                                           0x105e701ea                                                           0x105e701ec                                                           0x105e701f0                                                           0x105e701f4                                                           0x105e701f8                                                           0x105e70200                                                           0x105e70208                                                           0x105e70210                                                           0x105e70218                                                           0x105e70220                                                           "
+   actual:   "0x105e701e8                                                             0x105e701e9                                                             0x105e701ea                                                             0x105e701ec                                                             0x105e701f0                                                             0x105e701f4                                                             0x105e701f8                                                             0x105e70200                                                             0x105e70208                                                             0x105e70210                                                             0x105e70218                                                             0x105e70220                                                             "
 
 - [OUTPUT] ft_printf("%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x10d9351e8     0x10d9351e9     0x10d9351ea     0x10d9351ec     0x10d9351f0     0x10d9351f4     0x10d9351f8     0x10d935200     0x10d935208     0x10d935210     0x10d935218     0x10d935220     "
-   actual:   "0x10d9351e8       0x10d9351e9       0x10d9351ea       0x10d9351ec       0x10d9351f0       0x10d9351f4       0x10d9351f8       0x10d935200       0x10d935208       0x10d935210       0x10d935218       0x10d935220       "
+   expected: "0x105e701e8     0x105e701e9     0x105e701ea     0x105e701ec     0x105e701f0     0x105e701f4     0x105e701f8     0x105e70200     0x105e70208     0x105e70210     0x105e70218     0x105e70220     "
+   actual:   "0x105e701e8       0x105e701e9       0x105e701ea       0x105e701ec       0x105e701f0       0x105e701f4       0x105e701f8       0x105e70200       0x105e70208       0x105e70210       0x105e70218       0x105e70220       "
 
 - [OUTPUT] ft_printf("%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x10d9351e8                     0x10d9351e9                     0x10d9351ea                     0x10d9351ec                     0x10d9351f0                     0x10d9351f4                     0x10d9351f8                     0x10d935200                     0x10d935208                     0x10d935210                     0x10d935218                     0x10d935220                     "
-   actual:   "0x10d9351e8                       0x10d9351e9                       0x10d9351ea                       0x10d9351ec                       0x10d9351f0                       0x10d9351f4                       0x10d9351f8                       0x10d935200                       0x10d935208                       0x10d935210                       0x10d935218                       0x10d935220                       "
+   expected: "0x105e701e8                     0x105e701e9                     0x105e701ea                     0x105e701ec                     0x105e701f0                     0x105e701f4                     0x105e701f8                     0x105e70200                     0x105e70208                     0x105e70210                     0x105e70218                     0x105e70220                     "
+   actual:   "0x105e701e8                       0x105e701e9                       0x105e701ea                       0x105e701ec                       0x105e701f0                       0x105e701f4                       0x105e701f8                       0x105e70200                       0x105e70208                       0x105e70210                       0x105e70218                       0x105e70220                       "
 
 - [OUTPUT] ft_printf("{%10d}", -42)
    expected: "{       -42}"
@@ -1056,7 +1036,7 @@
 
 - [OUTPUT] ft_printf("%50.2s", NULL)
    expected: "                                                (n"
-   actual:   "(null)"
+   actual:   "                                            (n"
 
 - [OUTPUT] ft_printf("%5.0s", "Hello")
    expected: "     "
@@ -1065,10 +1045,6 @@
 - [OUTPUT] ft_printf("%.1s", "Test")
    expected: "T"
    actual:   "Test"
-
-- [OUTPUT] ft_printf("%10s", NULL)
-   expected: "    (null)"
-   actual:   "(null)"
 
 - [OUTPUT] ft_printf("t3 %50.0d\n", 10)
    expected: "t3                                                 10\n"
@@ -1480,7 +1456,7 @@
 
 - [OUTPUT] ft_printf("%117p%-44c%-156c%-88.109s%0%" ,(void*)8225290685743754462lu,-123,65,NULL)
    expected: "                                                                                                   0x72261a4c9a15ecde                                           A                                                                                                                                                           (null)                                                                                  %\85"
-   actual:   "                                                                                                     0x72261a4c9a15ecde                                           A                                                                                                                                                           (null)%\85"
+   actual:   "                                                                                                     0x72261a4c9a15ecde                                           A                                                                                                                                                           (null)                                                                                  %\85"
 
 - [OUTPUT] ft_printf("%91p%--8.179X%--190c" ,(void*)13930816918730035186lu,505873219u,9)
    expected: "                                                                         0xc154342dcfe7cff20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001E270343                                                                                                                                                                                             \t"
@@ -1540,7 +1516,7 @@
 
 - [OUTPUT] ft_printf("%0168.128u%0054.92x%30.171s" ,2620195206u,1771128939u,NULL)
    expected: "                                        000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000026201952060000000000000000000000000000000000000000000000000000000000000000000000000000000000006991486b                        (null)"
-   actual:   "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000262019520600000000000000000000000000000000000000000000006991486b(null)"
+   actual:   "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000262019520600000000000000000000000000000000000000000000006991486b                        (null)"
 
 - [OUTPUT] ft_printf("%-186.138i%86p%-113c%--87p" ,-1320475933,(void*)11899625258064503923lu,-39,(void*)15206197846470084523lu)
    expected: "-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001320475933                                                                                                                   0xa523f62013336473                                                                                                                0xd30744601f28c7ab                                                                     \d9"
