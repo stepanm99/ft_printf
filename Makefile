@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/16 21:49:25 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/16 21:56:29 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
-	@make fcelan -C ./Libft
+#	@make fcelan -C ./Libft
 
 re: fclean all
 
