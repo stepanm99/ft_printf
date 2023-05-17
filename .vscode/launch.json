@@ -3,7 +3,7 @@
 	"configurations": [
 	  {
 		"name": "(lldb) Launch",
-		"type": "cppvsdbg",
+		"type": "cppdbg",
 		"request": "launch",
 		"program": "${workspaceFolder}/prog",
 		"args": [],
@@ -26,7 +26,7 @@
 		"request": "launch",
 		"args": [],
 		"cwd": "/Users/smelicha/Documents/ft_printf/ft_printf",
-		"program": "/Users/smelicha/Documents/ft_printf/ft_printf/build/Debug/outDebug"
+		"program": "/Users/smelicha/Documents/ft_printf/ft_printf/prog"
 	  }
 	]
 }

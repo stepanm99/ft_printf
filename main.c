@@ -1,7 +1,7 @@
 #include "src/ft_printf.h"
 #include <limits.h>
 
-void	check_leaks();
+//void	check_leaks();
 
 int	main(void)
 {
@@ -64,21 +64,21 @@ int	main(void)
 
 //*
 	printf("--------------------------\n");
-	count_my = ft_printf("%23s", NULL);
+	count_my = ft_printf(" %u ", LONG_MIN);
 	printf("\n--------------------------\n");
-	count_og = printf("%23s", NULL);
+	count_og = printf(" %lu ", LONG_MIN);
 	printf("\n--------------------------\n");
 	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
-	printf("\n--------------------------\n");//*/
+	printf("\n--------------------------\n");//*
 
 //*
 	printf("--------------------------\n");
-	count_my = ft_printf("%23s", "NULL");
+	count_my = ft_printf(" %u ", LONG_MIN);
 	printf("\n--------------------------\n");
-	count_og = printf("%23s", "NULL");
+	count_og = printf(" %lu ", LONG_MIN);
 	printf("\n--------------------------\n");
 	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
 	printf("\n--------------------------\n");//*/
-	check_leaks();
+//	check_leaks();
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 15:59:52 by smelicha          #+#    #+#              #
-#    Updated: 2023/04/18 00:04:38 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/17 21:54:46 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ BON = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c f
 		ft_lstiter.c ft_lstmap.c
 
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 OBJ	= $(SRC:.c=.o)
 OBJB = $(BON:.c=.o)

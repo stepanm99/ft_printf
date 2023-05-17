@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/17 00:21:37 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/17 21:55:08 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = $(shell find . -name "ft_printf.c" -o -name "ft_datainit.c" -o -name \
 					"ft_hextoa.c" -o -name "ft_print_pad.c" -type f)
 
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 OBJ	= $(SRC:.c=.o)
 
