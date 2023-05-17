@@ -44,7 +44,7 @@ int	main(void)
 	// printf("\n--------------------------\n");
 	// printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
 	// printf("\n--------------------------\n");
-/*
+//*
 	printf("--------------------------\n");
 	count_my = ft_printf("hxx?$X%cqf2\n;U%d&XWTH#%u`D8VK) As%%AXEKPc@w$%u%um#*%u", -736244248, 1459274746, 1497298676, -30071924, 1958771183, -785266128);
 	printf("\n--------------------------\n");
@@ -55,23 +55,32 @@ int	main(void)
 
 /*
 	printf("--------------------------\n");
-	count_my = ft_printf("|%c|%d|%u|%%|%u|%u|%u|", -736244248, 1459274746, 1497298676, -30071924, 1958771183, -785266128);
+	count_my = ft_printf(" %u %u %u %u %u %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	printf("\n--------------------------\n");
-	count_og = printf("|%c|%d|%u|%%|%u|%u|%u|", -736244248, 1459274746, 1497298676, -30071924, 1958771183, -785266128);
+	count_og = printf(" %u %u %lu %lu %lu %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	printf("\n--------------------------\n");
 	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
 	printf("\n--------------------------\n");//*/
 
-//*
+/*
+	printf("--------------------------\n");
+	count_my = ft_printf(" %u %u %u %u %u %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf("\n--------------------------\n");
+	count_og = printf(" %u %u %lu %lu %lu %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	printf("\n--------------------------\n");
+	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
+	printf("\n--------------------------\n");//*/
+
+/*
 	printf("--------------------------\n");
 	count_my = ft_printf(" %u ", LONG_MIN);
 	printf("\n--------------------------\n");
 	count_og = printf(" %lu ", LONG_MIN);
 	printf("\n--------------------------\n");
 	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
-	printf("\n--------------------------\n");//*
+	printf("\n--------------------------\n");//*/
 
-//*
+/*
 	printf("--------------------------\n");
 	count_my = ft_printf(" %u ", LONG_MIN);
 	printf("\n--------------------------\n");
