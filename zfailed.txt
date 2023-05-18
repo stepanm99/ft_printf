@@ -1,17 +1,3 @@
-For /Users/smelicha/francinette/tests/printf/printfTester/tests/p_test.cpp:
-30: 	TEST(6, print(" %p %p ", LONG_MIN, LONG_MAX));
-32: 	TEST(8, print(" %p %p ", ULONG_MAX, -ULONG_MAX));
-
-For /Users/smelicha/francinette/tests/printf/printfTester/tests/minus_test.cpp:
-48: 	TEST(22, print(" %-2p ", 1));
-49: 	TEST(23, print(" %-2p ", 15));
-50: 	TEST(24, print(" %-3p ", 16));
-51: 	TEST(25, print(" %-4p ", 17));
-52: 	TEST(26, print(" %-9p %-10p ", LONG_MIN, LONG_MAX));
-53: 	TEST(27, print(" %-11p %-12p ", INT_MIN, INT_MAX));
-54: 	TEST(28, print(" %-13p %-14p ", ULONG_MAX, -ULONG_MAX));
-55: 	TEST(29, print(" %-1p %-2p ", 0, 0));
-
 For /Users/smelicha/francinette/tests/printf/printfTester/tests/dot_test.cpp:
 26: 	TEST(2, print(" %.1s", ""));
 27: 	TEST(3, print("%.1s ", ""));

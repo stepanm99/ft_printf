@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:27 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/18 20:04:21 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/18 21:12:46 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int	ft_print_pointer(t_data *data)
 	if (data->padnum && !data->dash)
 		ft_print_pad(data);
 	write(1, "0x", 2);
+	data->varl += 2;
 	data->counter += 2;
 	while (*string != '\0')
 	{
