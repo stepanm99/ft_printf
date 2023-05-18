@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:09:41 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/15 22:38:38 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/18 23:13:49 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,20 @@ static void	plus_pad_resolve(t_data *data, char *string)
 	if (!data->dash)
 		plus_space(data, string);
 }
+/* just an idea, may not work...
+static void	prec(t_data *data)
+{
+	if (data->varl > data->prec)
+		return ;
+	else
+		data->prec = data->prec - data->varl;
+	while (data->prec !=0)
+	{
+		write(1, "0", 1);
+		data->counter++;
+		data->prec--;
+	}
+}*/
 
 int	ft_print_decimal(t_data *data)
 {
