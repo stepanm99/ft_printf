@@ -77,14 +77,6 @@ For /Users/smelicha/francinette/tests/printf/printfTester/tests/dot_test.cpp:
 182: 	TEST(153, print(" %.14X ", 9223372036854775807LL));
 183: 	TEST(154, print(" %.8X %.9X %.10X %.11X %.12X %.13X %.14X", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
 
-For /Users/smelicha/francinette/tests/printf/printfTester/tests/sharp_test.cpp:
-25: 	TEST(1, print(" %#x ", 0));
-49: 	TEST(25, print(" %#x ", LONG_MIN));
-53: 	TEST(29, print(" %#x %#x %#x %#x %#x %#x %#x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-56: 	TEST(31, print(" %#X ", 0));
-80: 	TEST(55, print(" %#X ", LONG_MIN));
-84: 	TEST(59, print(" %#X %#X %#X %#X %#X %#X %#X", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-
 For /Users/smelicha/francinette/tests/printf/printfTester/tests/space_test.cpp:
 35: 	TEST(10, print(" % d ", 0));
 37: 	TEST(12, print(" % d ", 1));
