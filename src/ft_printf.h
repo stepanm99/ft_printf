@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 23:49:36 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/16 21:46:22 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:42:29 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int		ft_print_pointer(t_data *data);
 int		ft_print_string(t_data *data);
 int		ft_print_unsigned_int(t_data *data);
 int		ft_char_comp(char c, char *set);
-char	*ft_utoa(unsigned long n);
-char	*ft_hextoa(long unsigned n, t_data *data);
+char	*ft_utoa(unsigned int n);
+char	*ft_hextoa(unsigned int n, t_data *data);
 void	ft_print_pad(t_data *data);
 
 #endif

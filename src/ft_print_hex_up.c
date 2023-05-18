@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:15 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/10 23:46:43 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:45:21 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_print_hex_up(t_data *data)
 	char	*ptr;
 
 	data->hexup = 1;
-	string = ft_hextoa(va_arg(*data->args, size_t), data);
+	string = ft_hextoa(va_arg(*data->args, unsigned int), data);
 	ptr = string;
 	data->varl = ft_strlen(string);
 	if (data->padnum && !data->dash)
