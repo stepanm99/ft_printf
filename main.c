@@ -80,11 +80,11 @@ int	main(void)
 	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
 	printf("\n--------------------------\n");//*/
 
-/*
+//*
 	printf("--------------------------\n");
-	count_my = ft_printf(" %u ", LONG_MIN);
+	count_my = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
 	printf("\n--------------------------\n");
-	count_og = printf(" %lu ", LONG_MIN);
+	count_og = printf(" %p %p ", LONG_MIN, LONG_MAX);
 	printf("\n--------------------------\n");
 	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
 	printf("\n--------------------------\n");//*/

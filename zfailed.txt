@@ -1,65 +1,16 @@
-For /Users/smelicha/francinette/tests/printf/printfTester/tests/u_test.cpp:
-48: 	TEST(24, print(" %u ", LONG_MAX));
-49: 	TEST(25, print(" %u ", LONG_MIN));
-51: 	TEST(27, print(" %u ", ULONG_MAX));
-52: 	TEST(28, print(" %u ", 9223372036854775807LL));
-53: 	TEST(29, print(" %u %u %u %u %u %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-
-For /Users/smelicha/francinette/tests/printf/printfTester/tests/x_test.cpp:
-48: 	TEST(24, print(" %x ", LONG_MAX));
-49: 	TEST(25, print(" %x ", LONG_MIN));
-51: 	TEST(27, print(" %x ", ULONG_MAX));
-52: 	TEST(28, print(" %x ", 9223372036854775807LL));
-53: 	TEST(29, print(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-
-For /Users/smelicha/francinette/tests/printf/printfTester/tests/upperx_test.cpp:
-48: 	TEST(24, print(" %X ", LONG_MAX));
-49: 	TEST(25, print(" %X ", LONG_MIN));
-51: 	TEST(27, print(" %X ", ULONG_MAX));
-52: 	TEST(28, print(" %X ", 9223372036854775807LL));
-53: 	TEST(29, print(" %X %X %X %X %X %X %X", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-
-For /Users/smelicha/francinette/tests/printf/printfTester/tests/mix_test.cpp:
-25: 	TEST(1, print("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0));
+For /Users/smelicha/francinette/tests/printf/printfTester/tests/p_test.cpp:
+30: 	TEST(6, print(" %p %p ", LONG_MIN, LONG_MAX));
+32: 	TEST(8, print(" %p %p ", ULONG_MAX, -ULONG_MAX));
 
 For /Users/smelicha/francinette/tests/printf/printfTester/tests/minus_test.cpp:
 48: 	TEST(22, print(" %-2p ", 1));
 49: 	TEST(23, print(" %-2p ", 15));
 50: 	TEST(24, print(" %-3p ", 16));
 51: 	TEST(25, print(" %-4p ", 17));
+52: 	TEST(26, print(" %-9p %-10p ", LONG_MIN, LONG_MAX));
 53: 	TEST(27, print(" %-11p %-12p ", INT_MIN, INT_MAX));
 54: 	TEST(28, print(" %-13p %-14p ", ULONG_MAX, -ULONG_MAX));
 55: 	TEST(29, print(" %-1p %-2p ", 0, 0));
-141: 	TEST(111, print(" %-12u ", LONG_MIN));
-142: 	TEST(112, print(" %-13u ", UINT_MAX));
-144: 	TEST(114, print(" %-15u ", 9223372036854775807LL));
-145: 	TEST(115, print(" %-9u %-10u %-11u %-12u %-13u %-14u %-15u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-147: 	TEST(116, print(" %-1x ", 0));
-171: 	TEST(140, print(" %-12x ", LONG_MIN));
-172: 	TEST(141, print(" %-13x ", UINT_MAX));
-174: 	TEST(143, print(" %-15x ", 9223372036854775807LL));
-175: 	TEST(144, print(" %-9x %-10x %-11x %-12x %-13x %-14x %-15x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-177: 	TEST(145, print(" %-1X ", 0));
-201: 	TEST(169, print(" %-12X ", LONG_MIN));
-202: 	TEST(170, print(" %-13X ", UINT_MAX));
-204: 	TEST(172, print(" %-15X ", 9223372036854775807LL));
-205: 	TEST(173, print(" %-9X %-10X %-11X %-12X %-13X %-14X %-15X", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-
-For /Users/smelicha/francinette/tests/printf/printfTester/tests/0_test.cpp:
-108: 	TEST(81, print(" %012u ", LONG_MIN));
-109: 	TEST(82, print(" %013u ", UINT_MAX));
-111: 	TEST(84, print(" %015u ", 9223372036854775807LL));
-112: 	TEST(85, print(" %09u %010u %011u %012u %013u %014u %015u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-114: 	TEST(86, print(" %01x ", 0));
-138: 	TEST(110, print(" %012x ", LONG_MIN));
-139: 	TEST(111, print(" %013x ", UINT_MAX));
-141: 	TEST(113, print(" %015x ", 9223372036854775807LL));
-142: 	TEST(114, print(" %09x %010x %011x %012x %013x %014x %015x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
-144: 	TEST(115, print(" %01X ", 0));
-168: 	TEST(139, print(" %012X ", LONG_MIN));
-169: 	TEST(140, print(" %013X ", UINT_MAX));
-171: 	TEST(142, print(" %015X ", 9223372036854775807LL));
-172: 	TEST(143, print(" %09X %010X %011X %012X %013X %014X %015X", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
 
 For /Users/smelicha/francinette/tests/printf/printfTester/tests/dot_test.cpp:
 26: 	TEST(2, print(" %.1s", ""));
@@ -106,7 +57,6 @@ For /Users/smelicha/francinette/tests/printf/printfTester/tests/dot_test.cpp:
 101: 	TEST(74, print(" %.4u ", 15));
 102: 	TEST(75, print(" %.5u ", 16));
 103: 	TEST(76, print(" %.6u ", 17));
-118: 	TEST(91, print(" %.10u ", LONG_MAX));
 119: 	TEST(92, print(" %.11u ", LONG_MIN));
 120: 	TEST(93, print(" %.12u ", UINT_MAX));
 121: 	TEST(94, print(" %.13u ", ULONG_MAX));
@@ -143,16 +93,10 @@ For /Users/smelicha/francinette/tests/printf/printfTester/tests/dot_test.cpp:
 
 For /Users/smelicha/francinette/tests/printf/printfTester/tests/sharp_test.cpp:
 25: 	TEST(1, print(" %#x ", 0));
-48: 	TEST(24, print(" %#x ", LONG_MAX));
 49: 	TEST(25, print(" %#x ", LONG_MIN));
-51: 	TEST(27, print(" %#x ", ULONG_MAX));
-52: 	TEST(28, print(" %#x ", 9223372036854775807LL));
 53: 	TEST(29, print(" %#x %#x %#x %#x %#x %#x %#x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
 56: 	TEST(31, print(" %#X ", 0));
-79: 	TEST(54, print(" %#X ", LONG_MAX));
 80: 	TEST(55, print(" %#X ", LONG_MIN));
-82: 	TEST(57, print(" %#X ", ULONG_MAX));
-83: 	TEST(58, print(" %#X ", 9223372036854775807LL));
 84: 	TEST(59, print(" %#X %#X %#X %#X %#X %#X %#X", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42));
 
 For /Users/smelicha/francinette/tests/printf/printfTester/tests/space_test.cpp:
