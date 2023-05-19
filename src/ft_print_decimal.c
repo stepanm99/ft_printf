@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:09:41 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/18 23:13:49 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/19 21:06:55 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	plus_pad_resolve(t_data *data, char *string)
 	if (!data->dash)
 		plus_space(data, string);
 }
-/* just an idea, may not work...
+
 static void	prec(t_data *data)
 {
 	if (data->varl > data->prec)
@@ -59,17 +59,31 @@ static void	prec(t_data *data)
 		data->counter++;
 		data->prec--;
 	}
-}*/
+}
+
+static int	check_neg(t_data *data, int n)
+{
+	if ((n < 0 && data->dot && (n != -2147483648)))
+	{
+		n = n * (-1);
+		write(1, "-", 1);
+		data->counter++;
+	}
+	return (n);
+}
 
 int	ft_print_decimal(t_data *data)
 {
 	char	*string;
 	char	*ptr;
+	int		n;
 
-	string = ft_itoa(va_arg(*data->args, int));
+	n = check_neg(data, va_arg(*data->args, int));
+	string = ft_itoa(n);
 	ptr = string;
 	data->varl = ft_strlen(string);
 	plus_pad_resolve(data, string);
+	prec(data);
 	if (*string == '-' && !data->dash)
 		string++;
 	while (*string != '\0')

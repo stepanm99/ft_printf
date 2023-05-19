@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/18 23:00:50 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/19 20:34:36 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ static void	ft_get_pad_num(t_data *data)
 			data->fmt++;
 		}
 	}
-	if (*data->fmt == '.')
-		data->dot = 1;
-	data->fmt++;
+//	data->fmt++;
 	if (data->dot)
 	{
 		while (ft_char_comp(*data->fmt, "0123456789"))
@@ -33,7 +31,7 @@ static void	ft_get_pad_num(t_data *data)
 			data->fmt++;
 		}
 	}
-	data->fmt -= 2;
+	data->fmt--;
 }
 
 void	ft_check_flag(t_data *data)
@@ -50,6 +48,11 @@ void	ft_check_flag(t_data *data)
 			data->hash = 1;
 		if (*data->fmt == '+')
 			data->plus = 1;
+		if (*data->fmt == '.')
+		{
+			data->dot = 1;
+			data->fmt++;
+		}
 		if (ft_char_comp(*data->fmt, "0123456789") && !((data->padnum > 0)
 				|| (data->prec > 0)))
 			ft_get_pad_num(data);

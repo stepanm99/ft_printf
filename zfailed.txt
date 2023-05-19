@@ -1,19 +1,13 @@
-For /Users/smelicha/francinette/tests/printf/printfTester/tests/minus_test.cpp:
-39: 	TEST(14, print(" %-0s ", ""));
-
 For /Users/smelicha/francinette/tests/printf/printfTester/tests/dot_test.cpp:
+25: 	TEST(1, print("%.s", ""));
+28: 	TEST(4, print(" %.s ", ""));
+29: 	TEST(5, print(" %.s ", "-"));
 36: 	TEST(11, print(" %.2d ", -1));
-37: 	TEST(12, print(" %.2d ", 1));
-40: 	TEST(15, print(" %.3d ", 11));
-41: 	TEST(16, print(" %.4d ", 15));
-42: 	TEST(17, print(" %.5d ", 16));
-43: 	TEST(18, print(" %.6d ", 17));
 49: 	TEST(24, print(" %.3d ", -11));
 50: 	TEST(25, print(" %.4d ", -14));
 53: 	TEST(28, print(" %.3d ", -99));
 55: 	TEST(30, print(" %.4d ", -101));
 58: 	TEST(33, print(" %.10d ", LONG_MAX));
-59: 	TEST(34, print(" %.11d ", LONG_MIN));
 60: 	TEST(35, print(" %.12d ", UINT_MAX));
 61: 	TEST(36, print(" %.13d ", ULONG_MAX));
 62: 	TEST(37, print(" %.14d ", 9223372036854775807LL));
