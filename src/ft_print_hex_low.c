@@ -6,11 +6,34 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:11 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/18 21:18:46 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/19 23:18:00 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void	print(t_data *data, char *string)
+{
+	while (*string != '\0')
+	{
+		write(1, string, 1);
+		data->counter++;
+		string++;
+	}
+}
+static void	prec(t_data *data)
+{
+	if (data->varl > data->prec)
+		return ;
+	else
+		data->prec = data->prec - data->varl;
+	while (data->prec !=0)
+	{
+		write(1, "0", 1);
+		data->counter++;
+		data->prec--;
+	}
+}
 
 int	ft_print_hex_low(t_data *data)
 {
@@ -22,6 +45,7 @@ int	ft_print_hex_low(t_data *data)
 	if (*string == '0')
 		data->hash = 0;
 	data->varl = ft_strlen(string);
+	prec(data);
 	if (data->padnum && !data->dash)
 		ft_print_pad(data);
 	if (data->hash == 1)
@@ -29,12 +53,7 @@ int	ft_print_hex_low(t_data *data)
 		write(1, "0x", 2);
 		data->counter += 2;
 	}
-	while (*string != '\0')
-	{
-		write(1, string, 1);
-		data->counter++;
-		string++;
-	}
+	print(data, string);
 	if (data->padnum && data->dash)
 		ft_print_pad(data);
 	free(ptr);
