@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/19 20:34:36 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/19 22:50:31 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	ft_check_flag(t_data *data)
 		if (*data->fmt == '.')
 		{
 			data->dot = 1;
-			data->fmt++;
+			if (ft_char_comp(*data->fmt + 1, "0123456789"))
+				data->fmt++;
 		}
 		if (ft_char_comp(*data->fmt, "0123456789") && !((data->padnum > 0)
 				|| (data->prec > 0)))
