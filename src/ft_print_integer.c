@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:20 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/19 21:14:57 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/20 22:21:25 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	plus_space(t_data *data, char *string)
 		data->counter++;
 		data->varl++;
 	}
-	if (!ft_char_comp('-', string) && data->space && (data->padnum > 0))
+	if (!ft_char_comp('-', string) && data->space)
 	{
 		write(1, " ", 1);
 		data->counter++;

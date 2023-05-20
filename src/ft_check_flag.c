@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/19 22:50:31 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/20 22:12:55 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static void	ft_get_pad_num(t_data *data)
 //	data->fmt++;
 	if (data->dot)
 	{
+		data->pre = data->padnum;
+		data->padnum = 0;
 		while (ft_char_comp(*data->fmt, "0123456789"))
 		{
 			data->prec = data->prec * 10 + (*data->fmt - '0');
