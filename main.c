@@ -91,9 +91,9 @@ int	main(void)
 
 //*
 	printf("--------------------------\n");
-	count_my = ft_printf("%7.5s", "yolo");
+	count_my = ft_printf("%07i", -54);
 	printf("\n--------------------------\n");
-	count_og = printf("%7.5s", "yolo");
+	count_og = printf("%07i", -54);
 	printf("\n--------------------------\n");
 	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
 	printf("\n--------------------------\n");//*/

@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:15:25 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/22 19:51:27 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:52:24 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,23 @@ static void	ft_get_pad_num(t_data *data)
 	data->fmt--;
 }
 
+static void	precision_decider(t_data *data)
+{
+	data->dot = 1;
+	if (ft_char_comp(*(data->fmt + 1), "0123456789"))
+		data->fmt++;
+	else if (ft_char_comp(*(data->fmt + 1), "cspdiuxX%"))
+	{
+//		data->fmt++;
+		while (data->padnum != 0)
+		{
+			write(1, " ", 1);
+			data->counter++;
+			data->padnum--;
+		}
+	}
+}
+
 void	ft_check_flag(t_data *data)
 {
 	while (!ft_char_comp(*data->fmt, "cspdiuxX%"))
@@ -50,9 +67,7 @@ void	ft_check_flag(t_data *data)
 			data->plus = 1;
 		if (*data->fmt == '.')
 		{
-			data->dot = 1;
-			if (ft_char_comp(*(data->fmt + 1), "0123456789"))
-				data->fmt++;
+			precision_decider(data);
 		}
 		if (ft_char_comp(*data->fmt, "0123456789"))
 			ft_get_pad_num(data);

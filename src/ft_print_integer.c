@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:20 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/20 22:21:25 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/22 23:04:26 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,14 @@ static void	plus_pad_resolve(t_data *data, char *string)
 {
 	if (data->dash)
 		plus_space(data, string);
+	if ((data->padnum && !data->dash) && !data->zero)
+		ft_print_pad(data);
 	if (ft_char_comp('-', string) && !data->dash)
 	{
 		write(1, "-", 1);
 		data->counter++;
 	}
-	if (data->padnum && !data->dash)
+	if ((data->padnum && !data->dash) && data->zero)
 		ft_print_pad(data);
 	if (!data->dash)
 		plus_space(data, string);

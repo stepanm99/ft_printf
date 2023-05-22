@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:10:30 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/22 20:40:41 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/22 22:09:39 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	string_printer(char *string, t_data *data)
 		write(1, string, 1);
 		data->counter++;
 		string++;
-		if (data->dot)
+		if ((data->dot && !data->dash) || data->pre)
 			data->prec--;
 		}
 	}
@@ -75,6 +75,8 @@ int	ft_print_string(t_data *data)
 	}
 	ptr = string;
 	data->varl = ft_strlen(string);
+	if (data->varl > data->prec)
+		data->pre = data->prec;
 	if (data->padnum && !data->dash)
 		ft_print_pad(data);
 	if (!data->dot && (data->padnum < 1))
