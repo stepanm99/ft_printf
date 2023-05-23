@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 21:39:11 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/22 22:16:29 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/23 22:53:08 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_print_pad(t_data *data)
 		data->padnum = data->padnum - data->prec;
 	else if ((data->padnum > data->varl) && !data->dot)
 		data->padnum = data->padnum - data->varl;
-	else if (data->pre)
+	else if (data->pre && !(data->varl > data->prec))
 		data->padnum = data->padnum - data->pre;
 	else
 		return ;
