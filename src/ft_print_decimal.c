@@ -6,11 +6,46 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:09:41 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/20 22:19:49 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/24 19:49:29 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void	padnum_precision_edit(t_data *data)
+{
+	if ((((data->padnum > data->varl) || ((data->padnum > data->prec
+			|| (data->prec > data->varl)))) && (data->prec != 0))
+			&& data->dot && (data->padnum > data->prec))
+		data->padnum = data->padnum - data->prec;
+	else if (((data->padnum > data->varl) && (data->prec > data->varl)) && data->dot)
+		data->padnum = data->padnum - data->varl;
+	else if ((data->padnum > data->varl) && !data->dot)
+		data->padnum = data->padnum - data->varl;
+	else if (data->pre && !((data->varl > data->prec) || (data->padnum < data->pre)))
+		data->padnum = data->padnum - data->pre;
+	else if (((data->padnum > data->pre && data->varl > data->pre) && data->dot) && data->pre)
+		data->padnum = data->padnum - data->pre;
+	else
+		data->padnum = 0;
+}
+
+static void	ft_print_pad_dec(t_data *data)
+{
+	char	c;
+
+	if (data->zero && !data->dash)
+		c = '0';
+	else
+		c = ' ';
+	padnum_precision_edit(data);
+	while (data->padnum != 0)
+	{
+		write(1, &c, 1);
+		data->counter++;
+		data->padnum--;
+	}
+}
 
 static void	plus_space(t_data *data, char *string)
 {
@@ -42,7 +77,7 @@ static void	plus_pad_resolve(t_data *data, char *string)
 		data->counter++;
 	}
 	if (data->padnum && !data->dash)
-		ft_print_pad(data);
+		ft_print_pad_dec(data);
 	if (!data->dash)
 		plus_space(data, string);
 }
@@ -93,7 +128,7 @@ int	ft_print_decimal(t_data *data)
 		string++;
 	}
 	if (data->padnum && data->dash)
-		ft_print_pad(data);
+		ft_print_pad_dec(data);
 	free(ptr);
 	return (0);
 }
