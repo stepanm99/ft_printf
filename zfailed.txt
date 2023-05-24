@@ -10,3 +10,15 @@ Total     OK: 641  KO: 297
 Total     OK: 508  KO: 430
 Total     OK: 667  KO: 271
 Total     OK: 663  KO: 275
+Total     OK: 668  KO: 270
+Total     OK: 678  KO: 260
+
+
+if (((data->padnum > data->varl) && (data->prec > data->varl)) && data->dot)
+		data->padnum = data->padnum - data->varl;
+
+
+if ((((data->padnum > data->varl) || ((data->padnum > data->prec
+			|| (data->prec > data->varl)))) && (data->prec != 0))
+			&& data->dot && (data->padnum > data->prec))
+		data->padnum = data->padnum - data->prec;
