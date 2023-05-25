@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 21:07:54 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/20 22:11:32 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/25 23:10:29 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ t_data	ft_datainit(va_list *args, const char *fmt)
 	data.plusspace = 1;
 	data.write = 1;
 	data.hexup = 0;
+	data.decneg = 0;
 	data.counter = 0;
 	data.args = args;
 	data.fmt = fmt;

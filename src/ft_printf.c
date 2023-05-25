@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:15:59 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/17 23:22:23 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/25 20:51:37 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	ft_data_refresh(t_data *data)
 	data->padnum = 0;
 	data->prec = 0;
 	data->varl = 0;
+	data->decneg = 0;
 }
 
 static void	ft_data_null(t_data *data)
