@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:40:38 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/11 20:29:26 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/26 22:49:08 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_type_resolve(t_data *data)
 	if (*data->fmt == 'd')
 		ft_print_decimal(data);
 	if (*data->fmt == 'i')
-		ft_print_integer(data);
+		ft_print_decimal(data);
 	if (*data->fmt == 'u')
 		ft_print_unsigned_int(data);
 	if (*data->fmt == 'x')

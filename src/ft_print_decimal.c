@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:09:41 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/25 23:23:59 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/26 23:13:40 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,14 @@ static int	numl(int n)
 	return (length);
 }
 
-static void	padnum_precision_edit(t_data *data)
+static void	padnum_precision_edit(t_data *data, char *string)
 {
 	if (!data->dot && (data->padnum - data->varl) >= 0)
+	{
 		data->padnum = data->padnum - data->varl;
+		if (data->space && !ft_char_comp('-', string))
+			data->padnum--;
+	}
 	else if (!data->dot && (data->padnum - data->varl) < 0)
 		data->padnum = 0;
 	else if ((data->prec > data->padnum && (data->padnum - data->varl) >= 0) && data->dot)
@@ -43,11 +47,25 @@ static void	padnum_precision_edit(t_data *data)
 		data->padnum = data->padnum - data->prec;
 	else if ((data->prec >= data->padnum && (data->padnum - data->varl) < 0) && data->dot)
 		data->padnum = 0;
-	else
-		return ;
+
+
+	if ((data->prec > data->padnum) && data->space && data->dot && !ft_char_comp('-', string) && data->padnum)
+	{
+		data->varl--;
+		data->padnum--;
+	}
+	else if ((data->prec > data->padnum) && data->space && data->dot && !ft_char_comp('-', string) && (data->padnum == 0))
+		data->prec++;
+	else if ((data->prec <= data->padnum) && data->space && data->dot && !ft_char_comp('-', string))
+	{
+		data->prec++;
+		data->padnum--;
+	}
+	else if (data->dot && data->space && (data->padnum > data->prec) && (data->prec >= data->varl))
+		data->padnum--;
 }
 
-static void	ft_print_pad_dec(t_data *data)
+static void	ft_print_pad_dec(t_data *data, char *string)
 {
 	char	c;
 
@@ -55,7 +73,7 @@ static void	ft_print_pad_dec(t_data *data)
 		c = '0';
 	else
 		c = ' ';
-	padnum_precision_edit(data);
+	padnum_precision_edit(data, string);
 	while (data->padnum != 0)
 	{
 		write(1, &c, 1);
@@ -103,7 +121,7 @@ static void	plus_pad_resolve(t_data *data, char *string)
 		&& (data->prec > data->padnum || data->prec > data->varl))
 		data->padnum--;
 	if (data->padnum && !data->dash)
-		ft_print_pad_dec(data);
+		ft_print_pad_dec(data, string);
 	if (((ft_char_comp('-', string) && !data->dash) && !data->dot))
 	{
 		write(1, "-", 1);
@@ -125,6 +143,8 @@ static void	prec(t_data *data)
 		return ;
 	else
 		data->prec = data->prec - data->varl;
+//	if (data->space)
+//		data->prec++;
 	while (data->prec !=0)
 	{
 		write(1, "0", 1);
@@ -178,7 +198,7 @@ int	ft_print_decimal(t_data *data)
 		string++;
 	}
 	if (data->padnum && data->dash)
-		ft_print_pad_dec(data);
+		ft_print_pad_dec(data, string);
 	free(ptr);
 	return (0);
 }

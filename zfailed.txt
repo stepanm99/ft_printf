@@ -13,6 +13,7 @@ Total     OK: 663  KO: 275
 Total     OK: 668  KO: 270
 Total     OK: 678  KO: 260
 Total     OK: 683  KO: 255
+Total     OK: 694  KO: 244
 
 
 if ((data->padnum > data->varl) && !data->dot)
@@ -23,3 +24,12 @@ if ((((data->padnum > data->varl) || ((data->padnum > data->prec
 			|| (data->prec > data->varl)))) && (data->prec != 0))
 			&& data->dot && (data->padnum > data->prec))
 		data->padnum = data->padnum - data->prec;
+
+-------------------------------------------------------------------------------------------------------------------------------
+|- 1889649778|
+--------------------------
+|-1889649778|
+--------------------------
+RETURNS:
+my function:	14
+og function:	13
