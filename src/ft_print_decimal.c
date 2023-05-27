@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:09:41 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/26 23:13:40 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/27 23:20:40 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ static void	padnum_precision_edit(t_data *data, char *string)
 		data->padnum = data->padnum - data->prec;
 	else if ((data->prec >= data->padnum && (data->padnum - data->varl) < 0) && data->dot)
 		data->padnum = 0;
-
-
 	if ((data->prec > data->padnum) && data->space && data->dot && !ft_char_comp('-', string) && data->padnum)
 	{
 		data->varl--;
@@ -104,7 +102,8 @@ static void	plus_space(t_data *data, char *string)
 	{
 		write(1, " ", 1);
 		data->counter++;
-		data->varl++;
+		if (!((*string == '0') && data->varl == 1) && ((data->counter > 2)))
+			data->varl++;
 	}
 }
 
@@ -166,7 +165,7 @@ static long	check_neg(t_data *data, long n)
 	}
 	else if (n < 0 && !data->dot && (data->padnum > numl(n)) && (n != -2147483648) && (n > -2147483648) && !data->zero)
 		return (n);
-	else if (n < 0 && !data->dot && data->padnum && (n != -2147483648) && (n > -2147483648))
+	else if (n < 0 && !data->dot && data->padnum && (n != -2147483648) && (n > -2147483648) && !data->space)
 	{
 		n = n * (-1);
 		data->decneg = 1;
