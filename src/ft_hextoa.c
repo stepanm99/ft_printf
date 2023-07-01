@@ -6,16 +6,16 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 23:44:15 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/14 20:29:19 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/18 19:43:28 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	getlen(long unsigned n);
-static int	getdigit(long unsigned n, char *ptr, int l, t_data *data);
+static int	getlen(unsigned int n);
+static int	getdigit(unsigned int n, char *ptr, int l, t_data *data);
 
-char	*ft_hextoa(long unsigned n, t_data *data)
+char	*ft_hextoa(unsigned int n, t_data *data)
 {
 	int		l;
 	char	*ptr;
@@ -28,7 +28,7 @@ char	*ft_hextoa(long unsigned n, t_data *data)
 	return (ptr);
 }
 
-static int	getlen(long unsigned n)
+static int	getlen(unsigned int n)
 {
 	int	len;
 
@@ -43,7 +43,7 @@ static int	getlen(long unsigned n)
 	return (len);
 }
 
-static int	getdigit(long unsigned n, char *ptr, int l, t_data *data)
+static int	getdigit(unsigned int n, char *ptr, int l, t_data *data)
 {
 	int	mod;
 

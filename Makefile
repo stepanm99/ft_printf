@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/05/17 21:55:08 by smelicha         ###   ########.fr        #
+#    Updated: 2023/05/29 20:39:00 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = $(shell find . -name "ft_printf.c" -o -name "ft_datainit.c" -o -name \
 					"ft_check_flag.c" -o -name "ft_print_character.c" -o -name \
 					"ft_print_decimal.c" -o -name "ft_print_flag.c" -o -name \
 					"ft_print_hex_low.c" -o -name "ft_print_hex_up.c" -o -name \
-					"ft_print_integer.c" -o -name "ft_print_percent.c" -o -name \
+					"ft_print_percent.c" -o -name "ft_print_decimal_helper.c" -o -name\
 					"ft_print_pointer.c" -o -name "ft_print_string.c" -o -name \
 					"ft_print_unsigned_int.c" -o -name "ft_type_resolve.c" -o -name \
 					"ft_char_comp.c" -o -name "ft_utoa.c" -o -name \
@@ -33,8 +33,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "Linking $@"
-	@make -C ./Libft
-	@cp ./Libft/libft.a $(NAME)
+	@make -C ./libft
+	@cp ./libft/libft.a $(NAME)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "Done!"
 
@@ -42,17 +42,12 @@ $(NAME): $(OBJ)
 	@echo "Compiling $<"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-#libft:
-#	@echo "Compiling and linking Libft"
-#	@cd Libft && make fclean && make
-
 clean:
 	@rm -f $(OBJ) $(OBJB)
-	@make clean -C ./Libft
+	@make clean -C ./libft
 
 fclean: clean
 	@rm -f $(NAME)
-#	@make fcelan -C ./Libft
 
 re: fclean all
 
@@ -63,13 +58,12 @@ bonus: all
 
 maintest: all
 	@echo "~~~ Testing with main function ~~~"
-	@$(CC) $(SRC) Libft/libft.a main.c leakcheck.c $(FLAGS)
+	@$(CC) $(SRC) libft/libft.a main.c $(FLAGS)
 	@./a.out
 
 maindebug: all
 	@echo "~~~ Testing with main function ~~~"
-	@$(CC) $(SRC) Libft/libft.a main.c -g $(FLAGS) -o prog
-#for testing purposes at home on linux $(NAME) was changed to $(SRC)
+	@$(CC) $(NAME) libft/libft.a main.c -g $(FLAGS) -o prog
 	@./prog
 
 .PHONY: all clean fclean re test bonus maintest maindebug

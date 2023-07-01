@@ -6,57 +6,78 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 22:09:41 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/15 22:38:38 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/05/29 20:11:24 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	plus_space(t_data *data, char *string)
+static int	numl(int n)
 {
-	if ((ft_char_comp('-', string)) && data->plusspace)
+	int	length;
+
+	length = 0;
+	while (n != 0)
 	{
-		data->plusspace = 0;
+		n = n / 10;
+		length++;
 	}
-	if (!ft_char_comp('-', string) && data->plus)
+	return (length);
+}
+
+static void	prec(t_data *data)
+{
+	if (data->varl > data->prec)
+		return ;
+	else
+		data->prec = data->prec - data->varl;
+	while (data->prec != 0)
 	{
-		write(1, "+", 1);
+		write(1, "0", 1);
 		data->counter++;
-		data->varl++;
-	}
-	if (!ft_char_comp('-', string) && data->space && (data->padnum > 0))
-	{
-		write(1, " ", 1);
-		data->counter++;
-		data->varl++;
+		data->prec--;
 	}
 }
 
-static void	plus_pad_resolve(t_data *data, char *string)
+static long	check_neg(t_data *data, long n)
 {
-	if (data->dash)
-		plus_space(data, string);
-	if (ft_char_comp('-', string) && !data->dash)
+	if ((n < 0 && data->dot && (n != -2147483648)) && data->padnum == 0)
 	{
+		n = n * (-1);
+		data->decneg = 1;
 		write(1, "-", 1);
 		data->counter++;
+		data->varl++;
+		data->prec++;
 	}
-	if (data->padnum && !data->dash)
-		ft_print_pad(data);
-	if (!data->dash)
-		plus_space(data, string);
+	else if (n < 0 && !data->dot && (data->padnum > numl(n))
+		&& (n != -2147483648) && (n > -2147483648) && !data->zero)
+		return (n);
+	else if (n < 0 && !data->dot && data->padnum && (n != -2147483648)
+		&& (n > -2147483648) && !data->space)
+	{
+		n = n * (-1);
+		data->decneg = 1;
+		write(1, "-", 1);
+		data->counter++;
+		data->padnum--;
+	}
+	return (n);
 }
 
 int	ft_print_decimal(t_data *data)
 {
 	char	*string;
 	char	*ptr;
+	long	n;
 
-	string = ft_itoa(va_arg(*data->args, int));
+	n = check_neg(data, va_arg(*data->args, int));
+	string = ft_itoa(n);
 	ptr = string;
-	data->varl = ft_strlen(string);
+	data->varl += ft_strlen(string);
 	plus_pad_resolve(data, string);
-	if (*string == '-' && !data->dash)
+	prec(data);
+	if ((*string == '-' && !data->dash) || (*string == '-' && data->decneg))
 		string++;
 	while (*string != '\0')
 	{
@@ -65,7 +86,24 @@ int	ft_print_decimal(t_data *data)
 		string++;
 	}
 	if (data->padnum && data->dash)
-		ft_print_pad(data);
+		ft_print_pad_dec(data, string);
 	free(ptr);
 	return (0);
+}
+
+void	ft_print_pad_dec(t_data *data, char *string)
+{
+	char	c;
+
+	if (data->zero && !data->dash)
+		c = '0';
+	else
+		c = ' ';
+	padnum_precision_decimal_edit(data, string);
+	while (data->padnum != 0)
+	{
+		write(1, &c, 1);
+		data->counter++;
+		data->padnum--;
+	}
 }
