@@ -1,5 +1,6 @@
 #include "src/ft_printf.h"
 #include <limits.h>
+#include<stdio.h>
 
 //void	check_leaks();
 
@@ -13,6 +14,15 @@ int	main(void)
 	count_og = 0;
 	i = 0;
 //	check_leaks();
+//*	
+	printf("--------------------------\n");
+	count_my = ft_printf("%1.0s, %1.0s, %1.0s, %1.0s", (char *)NULL, "", "test", "joihwhhgsdkhksdgsdg\t\v\n\r\f\a25252\b6");
+	printf("\n--------------------------\n");
+	count_og = printf("%1.0s, %1.0s, %1.0s, %1.0s", (char *)NULL, "", "test", "joihwhhgsdkhksdgsdg\t\v\n\r\f\a25252\b6");
+	printf("\n--------------------------\n");
+	printf("RETURNS:\nmy function:\t%i\nog function:\t%i\n", count_my, count_og);
+	printf("\n--------------------------\n");//*/
+
 	printf("--------------------------\n");
 	count_my = ft_printf(" %u %u %u %u %u %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	printf("\n--------------------------\n");
