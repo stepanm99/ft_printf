@@ -6,26 +6,20 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/08/09 16:57:31 by smelicha         ###   ########.fr        #
+#    Updated: 2023/09/19 19:51:32 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libftprintf.a
 
-SRCDIR = ./src/
-
-SRC = $(shell find . -name "ft_printf.c" -o -name "ft_datainit.c" -o -name \
-					"ft_check_flag.c" -o -name "ft_print_character.c" -o -name \
-					"ft_print_decimal.c" -o -name "ft_print_flag.c" -o -name \
-					"ft_print_hex_low.c" -o -name "ft_print_hex_up.c" -o -name \
-					"ft_print_percent.c" -o -name "ft_print_decimal_helper.c" -o -name\
-					"ft_print_pointer.c" -o -name "ft_print_string.c" -o -name \
-					"ft_print_unsigned_int.c" -o -name "ft_type_resolve.c" -o -name \
-					"ft_char_comp.c" -o -name "ft_utoa.c" -o -name \
-					"ft_hextoa.c" -o -name "ft_print_pad.c" -type f)
+SRC = ft_printf.c src/ft_datainit.c src/ft_hextoa.c \
+		src/ft_print_character.c src/ft_print_decimal.c \
+		src/ft_print_hex_low.c src/ft_print_hex_up.c src/ft_print_percent.c \
+		src/ft_print_pointer.c src/ft_print_string.c \
+		src/ft_print_unsigned_int.c src/ft_type_resolve.c src/ft_utoa.c \
 
 CC = cc
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 
 OBJ	= $(SRC:.c=.o)
 
@@ -48,13 +42,12 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@make fclean -C ./libft
 
 re: fclean all
 
 test: all
 	@./$(NAME)
-
-bonus: all
 
 maintest: all
 	@echo "~~~ Testing with main function ~~~"

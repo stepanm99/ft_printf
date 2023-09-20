@@ -6,27 +6,11 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 23:52:33 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/18 19:41:34 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/09/19 20:19:30 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-static int	getlen(unsigned int n);
-static int	getdigit(unsigned int n, char *ptr, int l);
-
-char	*ft_utoa(unsigned int n)
-{
-	int		l;
-	char	*ptr;
-
-	l = getlen(n);
-	ptr = ft_calloc(l + 1, sizeof(char));
-	if (!ptr)
-		return (0);
-	getdigit(n, ptr, l);
-	return (ptr);
-}
+#include "../incl/ft_printf.h"
 
 static int	getlen(unsigned int n)
 {
@@ -55,4 +39,17 @@ static int	getdigit(unsigned int n, char *ptr, int l)
 		l--;
 	}
 	return (0);
+}
+
+char	*ft_utoa(unsigned int n)
+{
+	int		l;
+	char	*ptr;
+
+	l = getlen(n);
+	ptr = ft_calloc(l + 1, sizeof(char));
+	if (!ptr)
+		return (0);
+	getdigit(n, ptr, l);
+	return (ptr);
 }
