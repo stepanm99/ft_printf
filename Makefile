@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/09/19 19:51:32 by smelicha         ###   ########.fr        #
+#    Updated: 2023/09/20 18:58:11 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "Linking $@"
-	@make -C ./libft
-	@cp ./libft/libft.a $(NAME)
+	@make -C ./Libft
+	@cp ./Libft/libft.a $(NAME)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "Done!"
 
@@ -38,11 +38,11 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -f $(OBJ) $(OBJB)
-	@make clean -C ./libft
+	@make clean -C ./Libft
 
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -C ./libft
+	@make fclean -C ./Libft
 
 re: fclean all
 
@@ -51,12 +51,12 @@ test: all
 
 maintest: all
 	@echo "~~~ Testing with main function ~~~"
-	@$(CC) $(SRC) libft/libft.a main.c $(FLAGS)
+	@$(CC) $(SRC) Libft/libft.a main.c $(FLAGS)
 	@./a.out
 
 maindebug: all
 	@echo "~~~ Testing with main function ~~~"
-	@$(CC) $(NAME) libft/libft.a main.c -g $(FLAGS) -o prog
+	@$(CC) $(NAME) Libft/libft.a main.c -g $(FLAGS) -o prog
 	@./prog
 
 .PHONY: all clean fclean re test bonus maintest maindebug
