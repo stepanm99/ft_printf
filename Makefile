@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/09/20 18:58:11 by smelicha         ###   ########.fr        #
+#    Updated: 2023/09/21 21:49:04 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRC = ft_printf.c src/ft_datainit.c src/ft_hextoa.c \
 		src/ft_print_hex_low.c src/ft_print_hex_up.c src/ft_print_percent.c \
 		src/ft_print_pointer.c src/ft_print_string.c \
 		src/ft_print_unsigned_int.c src/ft_type_resolve.c src/ft_utoa.c \
-
+		src/ft_print_float.c
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
@@ -27,8 +27,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "Linking $@"
-	@make -C ./Libft
-	@cp ./Libft/libft.a $(NAME)
+	@make -C ./libft
+	@cp ./libft/libft.a $(NAME)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "Done!"
 
@@ -38,11 +38,11 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -f $(OBJ) $(OBJB)
-	@make clean -C ./Libft
+	@make clean -C ./libft
 
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -C ./Libft
+	@make fclean -C ./libft
 
 re: fclean all
 
@@ -51,12 +51,12 @@ test: all
 
 maintest: all
 	@echo "~~~ Testing with main function ~~~"
-	@$(CC) $(SRC) Libft/libft.a main.c $(FLAGS)
+	@$(CC) $(SRC) libft/libft.a main.c $(FLAGS)
 	@./a.out
 
 maindebug: all
 	@echo "~~~ Testing with main function ~~~"
-	@$(CC) $(NAME) Libft/libft.a main.c -g $(FLAGS) -o prog
+	@$(CC) $(NAME) libft/libft.a main.c -g $(FLAGS) -o prog
 	@./prog
 
 .PHONY: all clean fclean re test bonus maintest maindebug
