@@ -6,14 +6,14 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 23:49:36 by smelicha          #+#    #+#             */
-/*   Updated: 2023/09/21 21:49:43 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/09/22 19:18:57 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include <stdarg.h>
-# include "../libft/libft.h"
+# include "../Libft/libft.h"
 
 typedef struct s_data
 {
