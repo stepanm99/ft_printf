@@ -6,11 +6,11 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:49:16 by smelicha          #+#    #+#             */
-/*   Updated: 2023/05/10 23:27:01 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:24:09 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 static int	getlen(int n);
 static int	getdigit(int n, char *ptr, int neg, int l);

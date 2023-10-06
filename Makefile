@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/01 18:40:25 by smelicha          #+#    #+#              #
-#    Updated: 2023/09/22 19:25:57 by smelicha         ###   ########.fr        #
+#    Updated: 2023/10/06 14:22:11 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,7 @@ SRC = ft_printf.c src/ft_datainit.c src/ft_hextoa.c \
 		src/ft_print_character.c src/ft_print_decimal.c \
 		src/ft_print_hex_low.c src/ft_print_hex_up.c src/ft_print_percent.c \
 		src/ft_print_pointer.c src/ft_print_string.c \
-		src/ft_print_unsigned_int.c src/ft_type_resolve.c src/ft_utoa.c \
-		src/ft_print_float.c
+		src/ft_print_unsigned_int.c src/ft_type_resolve.c src/ft_utoa.c
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 

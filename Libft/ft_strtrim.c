@@ -6,12 +6,12 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:43:50 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/10 22:24:12 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:23:31 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
